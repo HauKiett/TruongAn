@@ -13,9 +13,36 @@
 
 -git log (Xem lịch sử lưu)
 -git log --oneline (Xem lịch sử lưu và xem được id lưu)
--git checkout {id lưu}
+-git checkout {id lưu} (Xoá)
 
 - git checkout -b dev (Tạo branch mới)
 - git checkout master (Quay lại branch master)
 - git merge dev (Tổng hợp branch dev lại)
 - git branch -d {tên branch}
+
+--Cách push lên
+-git remote add origin https://github.com/HauKiett/TruongAn.git (Định nghĩa origin là đg dẫn)
+- git push origin master
+
+--Tạo branch để up lên github rồi up lên github
+-git checkout -b dev
+-git checkout -b dev
+-git push -u origin dev
+
+
+--Muốn lấy dự án trên github về thì dùng câu lệnh
+-cd vào thư mục
+-git clone https://github.com/HauKiett/TruongAn.git
+
+--Lấy cái branch trên github đã tạo đem về máy chưa có gì
+-git checkout master
+-git fetch origin
+-git checkout -b {Tên branch} origin/{Tên branch}
+
+
+----Cách Merge trên github
+Vào Pull Requests -> new
+Chọn master và nguyen 
+Chọn Create hết 
+Chọn Merge
+

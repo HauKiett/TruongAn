@@ -1,7 +1,5 @@
 <?php
 include_once('../../model/quanlytapthu.php');
-
-
 include_once('../../Controller/cdkytapthu.php');
 ?>
 <!doctype html>
@@ -98,7 +96,7 @@ include_once('../../Controller/cdkytapthu.php');
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/loder.png" alt="">
+                    <img src="assets/img_TruongAn/logo/logo.webp" alt="">
                 </div>
             </div>
         </div>
@@ -112,7 +110,7 @@ include_once('../../Controller/cdkytapthu.php');
                 <div class="menu-wrapper d-flex align-items-center justify-content-between">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html"><img src="assets/img/logo/logo.png" style="width:100px;" alt=""></a>
+                            <a href="index.html"><img src="assets/img_TruongAn/logo/logo.webp" style="width:100px;" alt=""></a>
                         </div>
                         <!-- Main-menu -->
                         <div class="main-menu f-right d-none d-lg-block">
@@ -121,7 +119,7 @@ include_once('../../Controller/cdkytapthu.php');
                                     <li><a href="index.html">Trang chủ</a></li>
                                  
                                     <li><a href="courses.html">Gói tập</a></li>
-                                    <li><a href="device.html">Thiết Bị</a></li>
+                                    <li><a href="device.html">Sản phẩm</a></li>
                                     <li><a href="gallery.html">Khuyến Mãi</a></li>
                                         <ul class="submenu">
                                             <li><a href="blog.html">Tin mới</a></li>
@@ -137,7 +135,7 @@ include_once('../../Controller/cdkytapthu.php');
                         </div>
                         <!-- Header-btn -->
                         <div class="header-btns d-none d-lg-block f-right">
-                            <a href="dkytapthu.php" class="btn">Đăng Kí Tập Thử</a>
+                            <a href="dkytapthu.php" class="btn">Đăng Kí</a>
                         </div>
                         <!-- Mobile Menu -->
                         <div class="col-12">
@@ -157,7 +155,7 @@ include_once('../../Controller/cdkytapthu.php');
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2 pt-70">
-                                <h2>Đăng Ký Tập Thử
+                                <h2>Đăng Ký
                                 </h2>
                             </div>
                         </div>

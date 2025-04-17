@@ -31,7 +31,7 @@ include('../../Controller/cquanlyphanhoidd.php');
         <div class="preloader-inner position-relative">
             <div class="preloader-circle"></div>
             <div class="preloader-img pere-text">
-                <img src="assets/img/logo/loder.png" alt="">
+                <img src="assets/img_TruongAn/logo/logo.webp" alt="">
             </div>
         </div>
     </div>
@@ -45,7 +45,7 @@ include('../../Controller/cquanlyphanhoidd.php');
                 <div class="menu-wrapper d-flex align-items-center justify-content-between">
                     <!-- Logo -->
                     <div class="logo">
-                        <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                        <a href="index.html"><img src="assets/img_TruongAn/logo/logo.webp" alt=""></a>
                     </div>
                     <!-- Main-menu -->
                     <div class="main-menu f-right d-none d-lg-block">
@@ -54,7 +54,7 @@ include('../../Controller/cquanlyphanhoidd.php');
                                 <li><a href="index.html">Trang chủ</a></li>
                                 <li><a href="about.html">Giới thiệu</a></li>
                                 <li><a href="courses.html">Gói tập</a></li>
-                                <li><a href="pricing.html">Thiết bị</a></li>
+                                <li><a href="pricing.html">Sản phẩm</a></li>
                                 <li><a href="gallery.html">Khuyến mãi</a></li>
                                 <li><a href="blog.html">Tin Tức</a>
                                     <ul class="submenu">
@@ -71,7 +71,7 @@ include('../../Controller/cquanlyphanhoidd.php');
                     </div>
                     <!-- Header-btn -->
                     <div class="header-btns d-none d-lg-block f-right">
-                        <a href="dkytapthu.php" class="btn">Đăng Kí Tập Thử</a>
+                        <a href="dkytapthu.php" class="btn">Đăng Kí</a>
 
                     </div>
                     <!-- Mobile Menu -->
