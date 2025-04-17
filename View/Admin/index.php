@@ -3,6 +3,8 @@
 session_start();
 if (!$_SESSION["dangnhap"])
  	header("Location:login.php");
+include('sidebar.php');
+include_once('header.php');
 ?>
 <!doctype html>
 <html lang="en">
@@ -53,17 +55,8 @@ if (!$_SESSION["dangnhap"])
 <body>
 
     <div class="page-wrapper">
-
-        <!-- Sidebar wrapper start -->
-        <?php
-
-		include('sidebar.php');
-		?>
         <!-- Sidebar wrapper end -->
         <div class="main-container">
-            <?php
-			include('header.php');
-			?>
         </div>
     </div>
     <!-- Page wrapper end -->

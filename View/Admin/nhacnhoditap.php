@@ -1,5 +1,7 @@
 <?php
 session_start();
+include('sidebar.php');
+include_once('header.php');
 ?>
 <!doctype html>
 <html lang="en">
@@ -56,17 +58,8 @@ session_start();
 	<body>
 
 		<div class="page-wrapper">
-
-			<!-- Sidebar wrapper start -->
-			<?php
-				include('sidebar.php');
-			?>
-			<!-- Sidebar wrapper end -->
-
 			<div class="main-container">
-			<?php
-				include('header.php');
-			?>
+
 			<?php
 			
             include('../../Model/quanlynhacnho.php');

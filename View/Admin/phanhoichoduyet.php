@@ -1,5 +1,7 @@
 <?php session_start();
 $idSua = 1;
+include('sidebar.php');
+include_once('header.php');
 ?>
 <!doctype html>
 <html lang="en">
@@ -47,18 +49,8 @@ $idSua = 1;
 <body>
 
     <div class="page-wrapper">
-
-        <!-- Sidebar wrapper start -->
-        <?php
-			error_reporting(0);
-				include('sidebar.php');
-			?>
-        <!-- Sidebar wrapper end -->
-
         <div class="main-container">
-            <?php
-				include('header.php');
-			?>
+
             <?php
 			
             include('../../model/quanlyphanhoi.php');

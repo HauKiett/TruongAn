@@ -1,5 +1,7 @@
 <?php session_start();
 $idSua = 1;
+include('sidebar.php');
+include_once('header.php');
 ?>
 <!doctype html>
 <html lang="en">
@@ -35,17 +37,7 @@ $idSua = 1;
 <body>
 
     <div class="page-wrapper">
-
-        <!-- Sidebar wrapper start -->
-        <?php
-        include('sidebar.php');
-        ?>
-        <!-- Sidebar wrapper end -->
-
         <div class="main-container">
-            <?php
-            include_once('header.php');
-            ?>
             <?php
 include('../../Model/quanlihoadon.php');
 include('../../Controller/c_quanlihoadon.php');

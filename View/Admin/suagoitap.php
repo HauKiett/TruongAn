@@ -9,6 +9,8 @@ if (isset($_GET['magoi'])) {
     $obj = new goitap();
     $goitap = $obj->danhsachgoitap($magoi); // Giả sử bạn có phương thức này để lấy gói
 }
+include('sidebar.php');
+include_once('header.php');
 ?>
 
 <!doctype html>
@@ -30,17 +32,7 @@ if (isset($_GET['magoi'])) {
 <body>
 
     <div class="page-wrapper">
-
-        <!-- Sidebar wrapper start -->
-        <?php
-        include('sidebar.php');
-        ?>
-        <!-- Sidebar wrapper end -->
-
         <div class="main-container">
-            <?php
-            include('header.php');
-            ?>
             <div class="text-end mb-3">
                 <a href="goitap.php" class="btn btn-primary">
                     <i class="bi bi-arrow-left-circle"></i> Quay lại

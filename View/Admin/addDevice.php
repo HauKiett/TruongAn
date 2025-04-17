@@ -3,6 +3,8 @@ session_start();
 error_reporting(1);
 include_once('../../Model/Modeldevice.php');
 include('../../Controller/DeviceQL.php');
+include('sidebar.php');
+include_once('header.php');
 ?>
 
 <!doctype html>
@@ -39,17 +41,7 @@ include('../../Controller/DeviceQL.php');
 <body>
 
     <div class="page-wrapper">
-
-        <!-- Sidebar wrapper start -->
-        <?php
-        include('sidebar.php');
-        ?>
-        <!-- Sidebar wrapper end -->
-
         <div class="main-container">
-            <?php
-            include('header.php');
-            ?>
             <h3 class="text-center mb-4">Thêm thiết bị</h3>
             <form method="post" class="shadow p-4 rounded bg-light" enctype="multipart/form-data" style="margin-left: 20px;">
                 <div class="mb-3">

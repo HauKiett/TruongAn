@@ -1,5 +1,7 @@
 <?php
 error_reporting(0);
+include('sidebar.php');
+include_once('header.php');
 ?>
 
 <!doctype html>
@@ -36,17 +38,7 @@ error_reporting(0);
 <body>
 
     <div class="page-wrapper">
-
-        <!-- Sidebar wrapper start -->
-        <?php
-        include('sidebar.php');
-        ?>
-        <!-- Sidebar wrapper end -->
-
         <div class="main-container">
-            <?php
-            include('header.php');
-            ?>
             <div class="text-end mb-3">
                 <a href="../Admin/themkhuyenmai.php" class="btn btn-primary">
                     <i class="bi bi-plus-circle"></i> Thêm mới

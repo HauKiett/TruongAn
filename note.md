@@ -29,6 +29,11 @@
 -git checkout -b dev
 -git push -u origin dev
 
+----Cách Merge trên github
+Vào Pull Requests -> new
+Chọn master và nguyen 
+Chọn Create hết 
+Chọn Merge
 
 --Muốn lấy dự án trên github về thì dùng câu lệnh
 -cd vào thư mục
@@ -40,9 +45,4 @@
 -git checkout -b {Tên branch} origin/{Tên branch}
 
 
-----Cách Merge trên github
-Vào Pull Requests -> new
-Chọn master và nguyen 
-Chọn Create hết 
-Chọn Merge
 

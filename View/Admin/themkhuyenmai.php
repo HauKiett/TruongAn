@@ -1,6 +1,8 @@
 <?php
 include_once('../../model/quanlykhuyenmai.php');
 include('../../Controller/c_discount.php');
+include('sidebar.php');
+include_once('header.php');
 ?>
 <?php session_start();
 $idSua = 1;
@@ -41,16 +43,7 @@ $idSua = 1;
 
     <div class="page-wrapper">
 
-        <!-- Sidebar wrapper start -->
-        <?php
-        include('sidebar.php');
-        ?>
-        <!-- Sidebar wrapper end -->
-
         <div class="main-container">
-            <?php
-            include('header.php');
-            ?>
             <div class="text-end mb-3">
                 <a href="../Admin/discount.php" class="btn btn-primary">
                     <i class="bi bi-arrow-left-circle"></i> quay lại

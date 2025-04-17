@@ -8,6 +8,8 @@ include_once('../../model/quanlygoitap.php');
 
 
 include('../../Controller/cgoitap.php');
+include('sidebar.php');
+include_once('header.php');
 ?>
 
 <!doctype html>
@@ -44,17 +46,7 @@ include('../../Controller/cgoitap.php');
 <body>
 
     <div class="page-wrapper">
-
-        <!-- Sidebar wrapper start -->
-        <?php
-        include('sidebar.php');
-        ?>
-        <!-- Sidebar wrapper end -->
-
         <div class="main-container">
-            <?php
-            include('header.php');
-            ?>
             <div class="text-end mb-3">
                 <a href="goitap.php" class="btn btn-primary">
                     <i class="bi bi-arrow-left-circle"></i> Quay lại

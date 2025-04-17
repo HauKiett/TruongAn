@@ -7,6 +7,8 @@ include_once('../../Model/Modeldevice.php');
 include_once('../../Controller/DeviceController.php');
 include('../../Controller/DeviceQL.php');
 $p = new device();
+include('sidebar.php');
+include_once('header.php');
 ?>
 <!doctype html>
 <html lang="en">
@@ -60,24 +62,7 @@ $p = new device();
 
 		<!-- Page wrapper start -->
 		<div class="page-wrapper">
-
-			<!-- Sidebar wrapper start -->
-            <?php
-            include('sidebar.php');
-            ?>
-			<!-- Sidebar wrapper end -->
-
-			<!-- *************
-				************ Main container start *************
-			************* -->
 			<div class="main-container">
-
-				<!-- Page header starts -->
-                <?php
-                include('header.php');
-                ?>
-				<!-- Page header ends -->
-
 				<!-- Content wrapper scroll start -->
 				<div class="content-wrapper-scroll">
 

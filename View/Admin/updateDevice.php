@@ -4,7 +4,10 @@ include_once('../../Controller/DeviceController.php');
 include('../../Controller/DeviceQL.php');
 $p = new device();
 session_start();
+include('sidebar.php');
+include('header.php');
 ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -38,7 +41,7 @@ session_start();
 </head>
 
 <body>
-    <?php
+<?php
         $layid = $_GET['id'];
         $layten = $p->xuatdulieu("SELECT TenTB FROM thietbi WHERE MaTB='$layid'");
         $layloaitb = $p->xuatdulieu("SELECT LoaiTB FROM thietbi WHERE MaTB='$layid' LIMIT 1");
@@ -50,19 +53,11 @@ session_start();
         $loaiTB = !empty($layloaitb) ? $layloaitb[0]['LoaiTB'] : '';
         $tingtrang = !empty($laytingtrang) ? $laytingtrang[0]['TinhtrangTB'] : '';
         $hinhanh = !empty($layhinhanh) ? $layhinhanh[0]['Hinhanh'] : '';
+       
     ?>
     <div class="page-wrapper">
 
-        <!-- Sidebar wrapper start -->
-        <?php
-        include('sidebar.php');
-        ?>
-        <!-- Sidebar wrapper end -->
-
         <div class="main-container">
-            <?php
-            include('header.php');
-            ?>
             <h3 class="text-center mb-4">Cập nhật thiết bị</h3>
             <form method="post" class="shadow p-4 rounded bg-light " enctype="multipart/form-data" style="margin-left: 20px;">
                 <div class="row">

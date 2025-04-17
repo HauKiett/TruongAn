@@ -1,3 +1,7 @@
+<?php
+include('sidebar.php');
+include_once('header.php');
+?>
 <!doctype html>
 <html lang="en">
 <?php session_start();
@@ -74,17 +78,8 @@
             </div>
 		</div> -->
 	<div class="page-wrapper">
-
-		<!-- Sidebar wrapper start -->
-		<?php
-		include('sidebar.php');
-		?>
-		<!-- Sidebar wrapper end -->
-
 		<div class="main-container">
-			<?php
-			include('header.php');
-			?>
+
 			<!-- Content wrapper scroll start -->
 			<div class="content-wrapper-scroll">
 

@@ -4,6 +4,8 @@
 	include_once("../../Controller/DeviceController.php");
 	include_once('../../Controller/DeviceQL.php');
 	$p = new device();
+	include('sidebar.php');
+include_once('header.php');
 ?>
 <!doctype html>
 <html lang="en">
@@ -37,18 +39,7 @@
 	<body>
 
 		<div class="page-wrapper">
-
-			<!-- Sidebar wrapper start -->
-			<?php
-				include('sidebar.php');
-			?>
-			<!-- Sidebar wrapper end -->
-
 			<div class="main-container">
-				<?php
-					include('header.php');
-				?>
-
                 <div class="row" style="margin-left: 10px;">
 								<div class="text-center mb-3">
                 					<h3>Danh sách Bảo trì thiết bị</h3>
@@ -80,12 +71,6 @@
 						</div>
 			    </div>
 		    </div>
-		<!-- Page wrapper end -->
-<?php
-
- ?>
-
-
 
 
 		<script src="assets/js/jquery.min.js"></script>

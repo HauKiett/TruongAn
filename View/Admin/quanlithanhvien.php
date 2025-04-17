@@ -1,9 +1,10 @@
-<!doctype html>
-<html lang="en">
 <?php session_start();
 $idSua = 1;
+include('sidebar.php');
+include_once('header.php');
 ?>
-
+<!doctype html>
+<html lang="en">
 <head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
@@ -75,17 +76,7 @@ $idSua = 1;
             </div>
 		</div> -->
 	<div class="page-wrapper">
-
-		<!-- Sidebar wrapper start -->
-		<?php
-		include('sidebar.php');
-		?>
-		<!-- Sidebar wrapper end -->
-
 		<div class="main-container">
-			<?php
-			include('header.php');
-			?>
 			<!-- Content wrapper scroll start -->
 			<div class="content-wrapper-scroll">
 
