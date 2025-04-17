@@ -20,7 +20,7 @@
                 <li class="sidebar-dropdown">
                     <a href="dstapthu.php">
                         <i class="bi bi-person"></i>
-                        <span class="menu-text">Quản lí KH tập thử</span>
+                        <span class="menu-text">Quản lí KH tập thử A</span>
                     </a>
 
                 </li>
