@@ -15,21 +15,11 @@ include("header.php");
         <!--? Hero Start -->
         <div class="slider-area2">
             <div class="slider-height2 d-flex align-items-center">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="hero-cap hero-cap2 pt-70">
-                                <h2>Đánh Giá từ khách hàng</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <!-- Hero End -->
         <!--? Gallery Area Start -->
         <div class="gallery-area">
-       
         <?php
                 include('../../Model/xuatdulieu.php');
 					$obj = new database();
@@ -41,7 +31,7 @@ include("header.php");
 					
                   ?>
         <div class="comments-area">
-                            <h4 class="text-white">Comments</h4>
+                            <h2 >ĐÁNH GIÁ TỪ KHÁCH HÀNG</h2>
                             <div class="comment-list">
                             <?php foreach ($danhgia as $item): ?>
                                 <div class="single-comment justify-content-between d-flex mt-40">
@@ -51,7 +41,7 @@ include("header.php");
                                             <img src="assets/img/comment/comment_1.png" alt="">
                                         </div>
                                         <div class="desc">
-                                            <p class="comment text-white">
+                                            <p class="comment text-blue">
                                             <?= $item["NoiDung"] ?>
                                             </p>
                                             <div class="d-flex justify-content-between">
@@ -59,7 +49,7 @@ include("header.php");
                                                     <h5>
                                                         <a href="#" class="text-danger"><?= $item["TenTV"] ?></a>
                                                     </h5>
-                                                    <p class="date text-white"><?= $item["Date"] ?></p>
+                                                    <p class="date text-blue"><?= $item["Date"] ?></p>
                                                 </div>
                                             </div>
                                         </div>
