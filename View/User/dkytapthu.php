@@ -2,6 +2,9 @@
 include_once('../../model/quanlytapthu.php');
 include_once('../../Controller/cdkytapthu.php');
 include("header.php");
+
+$tensp = isset($_GET['tensp']) ? $_GET['tensp'] : '';
+$gia = isset($_GET['gia']) ? $_GET['gia'] : '';
 ?>
 <!doctype html>
 <html lang="en">
@@ -81,7 +84,7 @@ include("header.php");
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2 pt-70">
-                                <h2>Đăng Ký
+                                <h2>Thông tin giao hàng
                                 </h2>
                             </div>
                         </div>
@@ -112,18 +115,34 @@ include("header.php");
                     <input type="text" name="idCard" required pattern="^\d{9,12}$" placeholder="Nhập CCCD"
                         title="Căn cước không hợp lệ, vui lòng nhập lại.">
                 </div>
+
+
                 <div class="form-group">
-                    <label>Khung giờ gọi cho bạn:</label>
+                    <label for="tensp">Tên sản phẩm:</label>
+                    <input type="text" name="tensp" value="<?php echo htmlspecialchars($tensp); ?>">
+                </div>
+
+                <div class="form-group">
+                    <label for="gia">Giá:</label>
+                    <input type="text" name="gia" value="<?php echo htmlspecialchars($gia); ?>">
+                </div>
+
+                <div class="form-group">
+                    <label>Phương thức thanh toán</label>
                     <select class="form-group" name="Thoigianlienlac" placeholder="Chọn khung giờ">
-                        <option value="9:00 AM - 12:00 PM">9:00 AM - 12:00 PM</option>
-                        <option value="12:00 PM - 2:00 PM">12:00 PM - 2:00 PM</option>
-                        <option value="2:00 PM - 5:00 PM">2:00 PM - 5:00 PM</option>
-                        <option value="5:00 PM - 10:00 PM">5:00 PM - 10:00 PM</option>
+                        <option value="Chưa thanh toán">Giao hàng rồi thanh toán</option>
+                        <option value="Đã thanh toán">Thanh toán điện tử</option>
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="diachi">Địa chỉ</label>
+                    <input type="text" name="diachi" required placeholder="Nhập địa chỉ"  
+                    pattern="^[A-Za-zÀ-Ỷà-ỷĂăÂâÊêÔôƠơƯưĐđ0-9\s,./\-]+$" 
+                    title="Vui lòng nhập địa chỉ hợp lệ, có thể bao gồm chữ, số">
                 </div>
                 <br> <br>
                 <div class="form-buttons">
-                    <button type="submit" name="dkytap" class="btn btn-submit">Xác nhận</button>
+                    <button type="submit" name="dkytap" class="btn btn-submit">Xác nhận</button> 
                     <button type="button" class="btn btn-cancel" onclick="cancelForm()">Hủy</button>
                 </div>
 

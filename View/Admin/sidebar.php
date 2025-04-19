@@ -13,26 +13,26 @@
                 <li class="sidebar-dropdown ">
                     <a href="quanlithanhvien.php">
                         <i class="bi bi-person"></i>
-                        <span class="menu-text">Quản lí thành viên</span>
+                        <span class="menu-text">Quản lí khách hàng</span>
                     </a>
 
                 </li>
                 <li class="sidebar-dropdown">
                     <a href="dstapthu.php">
                         <i class="bi bi-person"></i>
-                        <span class="menu-text">Quản lí KH tập thử</span>
+                        <span class="menu-text">Quản lý đặt hàng</span>
                     </a>
 
                 </li>
                 <li class="sidebar-dropdown">
                     <a href="#">
                         <i class="bi bi-display"></i>
-                        <span class="menu-text">Quản lí thiết bị</span>
+                        <span class="menu-text">Quản lí sản phẩm</span>
                     </a>
                     <div class="sidebar-submenu">
                         <ul>
                             <li>
-                                <a href="device.php">Danh sách thiết bị</a>
+                                <a href="device.php">Danh sách sản phẩm</a>
                             </li>
                             <li>
                                 <a href="DStinhtrangTB.php">Danh sách ghi nhận</a>

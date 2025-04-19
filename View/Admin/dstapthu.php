@@ -56,18 +56,20 @@ include_once('header.php');
 			if ($dstapthu) {
             echo '    <div class="row" style="margin-left: 10px;">
 							<div class="col-12">
-							<h4>Danh sách khách hàng đăng ký tập thử</h4>
+							<h4>Danh sách khách hàng đặt hàng</h4>
 									<div class="card-body">
 										<div class="table-responsive">
 											<table class="table m-0">
 												<thead>
 													<tr>
-														<th>Mã KH đăng ký</th>
+														<th>Mã KH</th>
 														<th>Họ và tên</th>
 														<th>Số điện thoại</th>
 														<th>Email</th>
-														<th>Số CCCD</th>
-														<th>Thời gian gọi cho KH</th>
+														<th>Số Tên sản phẩm</th>
+														<th>Số Giá</th>
+														<th>Phương thức thanh toán</th>
+														<th>Địa chỉ</th>
 													</tr>
 												</thead>
 												<tbody>';
@@ -77,8 +79,10 @@ include_once('header.php');
 														<td>'.$dstapthu[$i]["Hoten"].'</td>
 														<td>'.$dstapthu[$i]["SDT"].'</td>
 														<td>'.$dstapthu[$i]["Email"].'</td>
-                                                        <td>'.$dstapthu[$i]["CanCuoc"].'</td>
+														<td>'.$dstapthu[$i]["tensp"].'</td>
+														<td>'.$dstapthu[$i]["gia"].'</td>
 														<td>'.$dstapthu[$i]["Thoigianlienlac"].'</td>
+														<td>'.$dstapthu[$i]["diachi"].'</td>
 														</tr>
                                                     ';}
                 echo '

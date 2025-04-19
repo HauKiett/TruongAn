@@ -3,6 +3,7 @@ include_once('../../Model/Modeldevice.php');
 include_once('../../Controller/DeviceController.php');
 include('../../Controller/DeviceQL.php');
 $p = new device();
+$obj = new deviceQL();
 session_start();
 include('sidebar.php');
 include('header.php');
@@ -44,16 +45,16 @@ include('header.php');
 <?php
         $layid = $_GET['id'];
         $layten = $p->xuatdulieu("SELECT TenTB FROM thietbi WHERE MaTB='$layid'");
-        $layloaitb = $p->xuatdulieu("SELECT LoaiTB FROM thietbi WHERE MaTB='$layid' LIMIT 1");
+        $idloaisp = $p->xuatdulieu("SELECT idloaisp FROM thietbi WHERE MaTB='$layid' LIMIT 1");
         $laytingtrang = $p->xuatdulieu("SELECT TinhtrangTB FROM thietbi WHERE MaTB='$layid' LIMIT 1");
         $layhinhanh = $p->xuatdulieu("SELECT Hinhanh FROM thietbi WHERE MaTB='$layid' LIMIT 1");
-
+        $laygia = $p->xuatdulieu("SELECT gia FROM thietbi WHERE MaTB='$layid'");
         // Kiểm tra dữ liệu và gán giá trị
         $tenTB = !empty($layten) ? $layten[0]['TenTB'] : '';
-        $loaiTB = !empty($layloaitb) ? $layloaitb[0]['LoaiTB'] : '';
+        $idloaisp = !empty($idloaisp) ? $idloaisp[0]['idloaisp'] : '';
         $tingtrang = !empty($laytingtrang) ? $laytingtrang[0]['TinhtrangTB'] : '';
         $hinhanh = !empty($layhinhanh) ? $layhinhanh[0]['Hinhanh'] : '';
-       
+        $gia = !empty($laygia) ? $laygia[0]['gia'] : '';
     ?>
     <div class="page-wrapper">
 
@@ -63,20 +64,21 @@ include('header.php');
                 <div class="row">
                     <div class="col-8">
                         <div class="mb-3">
-                            <label for="tenTB" class="form-label">Tên thiết bị</label>
+                            <label for="tenTB" class="form-label">Tên sản phẩm</label>
                             <input type="text" class="form-control" name="tenTB" value="<?php echo $tenTB; ?>"/>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label d-flex">Loại thiết bị</label>
-                            <select name="loaiTB" class="select-single js-states form-control">
-                                <option value="1" <?php if ($loaiTB == 1) echo 'selected'; ?>>Tập tay</option>
-                                <option value="2" <?php if ($loaiTB == 2) echo 'selected'; ?>>Tập chân</option>
-                                <option value="3" <?php if ($loaiTB == 3) echo 'selected'; ?>>Tập cơ bụng</option>
-                                <option value="4" <?php if ($loaiTB == 4) echo 'selected'; ?>>Tập ngực</option>
+                            <label class="form-label d-flex">Loại sản phẩm</label>
+                            <select name="idloaisp" class="select-single js-states form-control">
+                            <?php echo $obj->selectloaisp(); ?>
                             </select>
                         </div>
+                        <div class="mb-3">
+                            <label for="gia" class="form-label">Giá</label>
+                            <input type="text" class="form-control" name="gia" value="<?php echo $gia; ?>"/>
+                        </div>
                         <div class="mb-4">
-                            <label class="form-label d-flex">Tình trạng thiết bị</label>
+                            <label class="form-label d-flex">Tình trạng sản phẩm</label>
                             <select name="tinhtrang" class="select-single js-states form-control">
                                 <option value="1" <?php if ($tingtrang == 1) echo 'selected'; ?>>Bình thường</option>
                                 <option value="2" <?php if ($tingtrang == 2) echo 'selected'; ?>>Bảo trì</option>

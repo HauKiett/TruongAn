@@ -48,16 +48,14 @@
                     <div class="menu-wrapper d-flex align-items-center justify-content-between">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="index.html"><img src="assets/img_TruongAn/logo/logo.webp" style="width:100px;" alt=""></a>
+                            <a href="index.php"><img src="assets/img_TruongAn/logo/logo.webp" style="width:100px;" alt=""></a>
                         </div>
                         <!-- Main-menu -->
                         <div class="main-menu f-right d-none d-lg-block">
                             <nav>
                                 <ul id="navigation">
                                     <li><a href="index.php">Trang chủ</a></li>
-                                 
-                                    <li><a href="courses.php">Sản phẩm</a></li>
-                                    <li><a href="device.php">Sản phẩm sai</a></li>
+                                    <li><a href="device.php">Sản phẩm</a></li>
                                     <li><a href="gallery.php">Khuyến Mãi</a></li>
                                         <ul class="submenu">
                                             <li><a href="blog.php">Tin mới</a></li>
@@ -68,6 +66,7 @@
                                     <li><a href="contact.php">Phản hồi</a></li>
                                     <li><a href="danhgia.php">Đánh giá</a></li>
                                     <li><a href="../Admin/index.php">quản lý</a></li>
+                                    <li><a href="index1.php">SP</a></li>
                                 </ul>
                             </nav>
                         </div>

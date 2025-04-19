@@ -3,6 +3,7 @@ session_start();
 error_reporting(1);
 include_once('../../Model/Modeldevice.php');
 include('../../Controller/DeviceQL.php');
+$obj = new deviceQL();
 include('sidebar.php');
 include_once('header.php');
 ?>
@@ -42,24 +43,25 @@ include_once('header.php');
 
     <div class="page-wrapper">
         <div class="main-container">
-            <h3 class="text-center mb-4">Thêm thiết bị</h3>
+            <h3 class="text-center mb-4">Thêm sản phẩm</h3>
             <form method="post" class="shadow p-4 rounded bg-light" enctype="multipart/form-data" style="margin-left: 20px;">
                 <div class="mb-3">
-                    <label for="" class="form-label">Tên thiết bi</label>
+                    <label for="" class="form-label">Tên sản phẩm</label>
                     <input type="text" class="form-control" name="tenTB"/>
                 </div>
                 <div class="mb-3">
-					<label class="form-label d-flex">Loại thiết bị</label>
-					<select name="loaiTB" class="select-single js-states form-control" title="Select Product Category" data-live-search="true">
-						<option value="">--Chọn loại thiết bị--</option>
-						<option value="1">Tập tay</option>
-						<option value="2">Tập chân</option>
-						<option value="3">Tập cơ bụng</option>
-						<option value="4">Tập ngực</option>
+					<label class="form-label d-flex">Loại sản phẩm</label>
+					<select name="idloaisp" class="select-single js-states form-control" title="Select Product Category" data-live-search="true">
+						<option value="">--Chọn loại sản phẩm--</option>
+						<?php echo $obj->selectloaisp(); ?>
 					</select>
 				</div>
+                <div class="mb-3">
+                    <label for="" class="form-label">Giá</label>
+                    <input type="text" class="form-control" name="gia"/>
+                </div>
                 <div class="mb-4">
-                <label class="form-label d-flex">Tình trạng thiết bị</label>
+                <label class="form-label d-flex">Tình trạng sản phẩm</label>
 					<select name="tinhtrang" class="select-single js-states form-control" title="Select Product Category" data-live-search="true">
 						<option value="">--Chọn tình trạng--</option>
 						<option value="1">Bình thường</option>

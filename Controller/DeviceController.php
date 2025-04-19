@@ -10,8 +10,8 @@
 						<thead>
 							<tr>
 								<th>STT</th>
-								<th></th>
-								<th>Loại thiết bị</th>
+								<th>Tên sản phẩm</th>
+                                <th>Giá</th>
 								<th>Tình trạng</th>
 								<th>Hình ảnh</th>
                                 <th>Tùy Chỉnh</th>
@@ -21,7 +21,7 @@
                     while($row = mysqli_fetch_array($ketqua)){
                         $idtb = $row['MaTB'];
                         $tenTB = $row['TenTB'];
-                        $loaiTB = $row['LoaiTB'];
+                        $gia = $row['gia'];
                         $tingtrang = $row['TinhTrangTB'];
                         $hinh = $row['Hinhanh'];
                         echo '
@@ -29,7 +29,7 @@
 								<tr>
 									<td style="padding-top: 18px;">'.$dem.'</td>
 									<td style="padding-top: 18px;">'.$tenTB.'</td>
-									<td style="padding-top: 18px;">'.$loaiTB.'</td>
+                                    <td style="padding-top: 18px;">'.$gia.'</td>
 									<td style="padding-top: 18px;">'.$tingtrang.'</td>
 									<td>
 	                                    <img src="./assets/img/device/'.$hinh.'" alt="" width="50px" height="50px">

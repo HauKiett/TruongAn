@@ -4,30 +4,23 @@ $p = new deviceQL();
         if (isset($_POST["Thêm"])) {
             // Lấy dữ liệu từ form
             $tenTB = $_POST["tenTB"];
-            $loaiTB = $_POST["loaiTB"];
+            $idloaisp=$_POST["idloaisp"];
             $tinhtrang = $_POST["tinhtrang"];
-        
             $name = $_FILES['myfile']['name'];
             $tmp_name = $_FILES['myfile']['tmp_name'];
-        
+            $gia=$_POST["gia"];
             $folder = "./assets/img/device/";
-            // Gán giá trị bằng tên
-            $loaiTB_names = [
-                1 => "Tập tay",
-                2 => "Tập chân",
-                3 => "Tập cơ bụng",
-                4 => "Tập ngực"
-            ];
-        
+ 
+            
+                   // Gán giá trị bằng tên
             $tingtrang_names = [
                 1 => "Bình thường",
                 2 => "Bảo trì",
             ];
         
-            $loaiTB_names = $loaiTB_names[$loaiTB];
             $tingtrang_names = $tingtrang_names[$tinhtrang];
         
-            if (!$loaiTB_names || !$tenTB || !$tingtrang_names) {
+            if (!$tenTB || !$tingtrang_names) {
                 echo "<script>alert('Vui lòng nhập đầy đủ thông tin');</script>";
             } else if ($name != "") {
                 // Kiểm tra phần mở rộng của file
@@ -39,8 +32,8 @@ $p = new deviceQL();
                     $name = time() . '_' . $name;
                     if ($p->uploadfile($name, $tmp_name, $folder)) {
                         // Chuẩn bị câu lệnh SQL để thêm vào cơ sở dữ liệu
-                        $sql = "INSERT INTO thietbi (TenTB, LoaiTB, TinhTrangTB, Hinhanh) 
-                                VALUES ('$tenTB', '$loaiTB_names', '$tingtrang_names', '$name')";
+                        $sql = "INSERT INTO thietbi (TenTB, idloaisp, TinhTrangTB, Hinhanh, gia) 
+                                VALUES ('$tenTB', '$idloaisp', '$tingtrang_names', '$name','$gia')";
         
                         // Thực thi câu lệnh SQL
                         if ($p->themthietbi($sql)) {
@@ -58,7 +51,7 @@ $p = new deviceQL();
 
         if (isset($_POST["nutXoa"])) {
             $idTB = $_POST['nutXoa'];
-            if($idTB){
+            if($idTB>0){
                 if ($p->xoathietbi($idTB)) {
                     echo "<script>alert('Xóa thiết bị thành công!'); </script>";
                 } else {
@@ -74,26 +67,21 @@ $p = new deviceQL();
             // Lấy dữ liệu từ form
             $idTB = $_GET["id"];
             $tenTB = $_POST["tenTB"];
-            $loaiTB = $_POST["loaiTB"];
+            $idloaisp = $_POST["idloaisp"];
             $tinhtrang = $_POST["tinhtrang"];
             $hinhanh = $_FILES['myfile']; // Hình ảnh (nếu có)
+            $gia = $_POST["gia"];
         
             // Chuyển đổi giá trị của Loại thiết bị và Tình trạng
-            $loaiTB_names = [
-                1 => "Tập tay",
-                2 => "Tập chân",
-                3 => "Tập cơ bụng",
-                4 => "Tập ngực"
-            ];
+
         
             $tingtrang_names = [
                 1 => "Bình thường",
                 2 => "Bảo trì"
             ];
         
-            $loaiTB_names = $loaiTB_names[$loaiTB];
             $tingtrang_names = $tingtrang_names[$tinhtrang];
-            if ($p->Capnhatthietbi($idTB, $tenTB, $loaiTB_names, $tingtrang_names, $hinhanh)==1) {
+            if ($p->Capnhatthietbi($idTB, $tenTB, $idloaisp, $tingtrang_names, $hinhanh, $gia)==1) {
                 echo "<script>alert('Cập nhật thiết bị thành công!'); window.location='device.php';</script>";
             } else {
                 echo "<script>alert('Cập nhật thiết bị thất bại!');</script>";

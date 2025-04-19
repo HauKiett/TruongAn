@@ -42,7 +42,7 @@ session_start();
                 <div class="row" style="margin-left: 10px;">
 								<div class="text-end mb-3">
                 						<a href="../Admin/addDevice.php" class="btn btn-primary">
-                    						<i class="bi bi-plus-circle"></i>Thêm thiết bị
+                    						<i class="bi bi-plus-circle"></i>Thêm sản phẩm
                 						</a>
             						</div>
 								<div class="col-12">
@@ -57,7 +57,7 @@ session_start();
 									
 									<?php
 										$sql= "select * from thietbi";
-										$p->selectalldevice($sql);	
+										$p->selectalldevice($sql);
 									?>
 								</div>
 

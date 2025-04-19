@@ -225,47 +225,7 @@ include("header.php");
         </section>
         <!-- Courses area End -->
         <!-- ? services-area -->
-        <section class="services-area">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
-                        <div class="single-services mb-40 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
-                            <div class="features-icon">
-                                <i class="ti-location-pin"></i>
-                            </div>
-                            <div class="features-caption">
-                                <h3>Location</h3>
-                                <p>12 Nguyen Van Bao streets </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
-                        <div class="single-services mb-40 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                            <div class="features-icon">
-                                <i class="ti-tablet"></i>
-                            </div>
-                            <div class="features-caption">
-                                <h3>Phone</h3>
-                                <p>(84) 349 195 620</p>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
-                        <div class="single-services mb-40 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">
-                            <div class="features-icon">
-                                <i class="ti-email"></i>
-                            </div>
-                            <div class="features-caption">
-                                <h3>Email</h3>
-                                <p>chung9atm@gmail.com</p>
-                                <p>chung10atm@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 <?php
 include("footer.php");

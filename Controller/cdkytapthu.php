@@ -11,12 +11,15 @@ if (isset($_POST["dkytap"])) {
     $SDT = $_POST["phone"];
     $Email = trim(strtolower($_POST['email']));
     $CanCuoc = $_POST["idCard"];
+    $tensp = $_POST["tensp"];
+    $gia = $_POST["gia"];
     $Thoigianlienlac = $_POST["Thoigianlienlac"];
+    $diachi = $_POST["diachi"];
     $dsdkytap = $obj->dsdkytapthu();
     $ss=0;
     if ($dsdkytap){
         for ($i = 0; $i < count($dsdkytap); $i++) {
-            if($dsdkytap[$i]["SDT"]==$SDT || $dsdkytap[$i]["Email"]==$Email || $dsdkytap[$i]["CanCuoc"]==$CanCuoc){
+            if($dsdkytap[$i]["SDT"]==$SDT || $dsdkytap[$i]["Email"]==$Email || $dsdkytap[$i]["CanCuoc"]==$CanCuoc ){
                 $ss=1;
             }
             else{
@@ -26,8 +29,8 @@ if (isset($_POST["dkytap"])) {
     }
     if($ss==0){
                     // Chuẩn bị câu lệnh SQL để thêm vào cơ sở dữ liệu
-    $sql = "INSERT INTO khtapthu (Hoten, SDT, Email, CanCuoc, Thoigianlienlac) 
-            VALUES ('$HoTen', '$SDT', '$Email', '$CanCuoc', '$Thoigianlienlac')";
+    $sql = "INSERT INTO khtapthu (Hoten, SDT, Email, CanCuoc, tensp, gia, Thoigianlienlac, diachi) 
+            VALUES ('$HoTen', '$SDT', '$Email', '$CanCuoc', '$tensp', '$gia', '$Thoigianlienlac', '$diachi')";
 
     // Thực thi câu lệnh SQL
     if ($obj->dkytapthu($sql)) {
@@ -42,11 +45,11 @@ if (isset($_POST["dkytap"])) {
         $mail->Host = 'smtp.gmail.com'; //địa chỉ server
         $mail->SMTPAuth = true; 
         $tennguoigui = 'Phòng Gym WarmGuys'; //Nhập tên người gửi
-        $mail->Username = 'chung9atm@gmail.com'; // Tài khoản Gmail
-        $mail->Password = 'jbxz vatl yfot cstk'; // Mật khẩu ứng dụng
+        $mail->Username = 'kietlacbox@gmail.com'; // Tài khoản Gmail
+        $mail->Password = '159359azAZ'; // Mật khẩu ứng dụng
         $mail->SMTPSecure = 'ssl';   
         $mail->Port = 465;              
-        $mail->setFrom('chung9atm@gmail.com', $tennguoigui); 
+        $mail->setFrom('kietlacbox@gmail.com', $tennguoigui); 
         $mail->addAddress($Email); // Người nhận  
 
         // Nội dung email

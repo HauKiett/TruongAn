@@ -37,11 +37,25 @@ class deviceQL extends connect_database{
         $sql_delete = "DELETE FROM thietbi WHERE MaTB = $idtb";
         return $this->tuychinh($sql_delete); // Thực hiện câu lệnh xóa
     }
+    public function selectloaisp($value='')
+    {
+        $str='';
+        $sql="select * from loaisp";
+        $arr=$this->xuatdulieu($sql);
+        for($i=0;$i<count($arr);$i++)
+        {
+            if($arr[$i]["idloaisp"]==$value)
+                $str.='<option selected value="'.$arr[$i]["idloaisp"].'">'.$arr[$i]["tenloaisp"].'</option>';
+            else
+            $str.='<option value="'.$arr[$i]["idloaisp"].'">'.$arr[$i]["tenloaisp"].'</option>';
+        }
+        return $str;
+    }
 
-    public function Capnhatthietbi($idtb, $tenTB, $loaiTB, $tinhtrang, $hinhanh = "")
+    public function Capnhatthietbi($idtb, $tenTB, $idloaisp, $tinhtrang, $hinhanh, $gia)
 {
     // Kiểm tra và xử lý hình ảnh nếu có
-    $sql_update = "UPDATE thietbi SET TenTB = '$tenTB', LoaiTB = '$loaiTB', TinhTrangTB = '$tinhtrang'";
+    $sql_update = "UPDATE thietbi SET TenTB = '$tenTB', idloaisp='$idloaisp', TinhTrangTB = '$tinhtrang', gia='$gia'";
 
     // Nếu có hình ảnh mới, xử lý và cập nhật vào cơ sở dữ liệu
     if ($hinhanh['name'] != "") {
@@ -78,4 +92,5 @@ class deviceQL extends connect_database{
         return $this->tuychinh($sql);
     }
 }
+
 ?>

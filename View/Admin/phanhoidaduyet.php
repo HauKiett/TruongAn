@@ -1,10 +1,8 @@
 <?php session_start();
 $idSua = 1;
-<?php session_start();
-$idSua = 1;
 include('sidebar.php');
 include_once('header.php');
-?>
+
 ?>
 <!doctype html>
 <html lang="en">

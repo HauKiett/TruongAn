@@ -82,76 +82,6 @@ include_once('header.php');
 
 				<!-- Content wrapper start -->
 				<div class="content-wrapper">
-
-					<!-- <style>
-					/*	.content-wrapper {
-							position: relative;
-
-						}*/
-
-						table {
-							width: 60vw;
-							background-color: aliceblue;
-
-						}
-
-						.table-modal {
-							position: relative;
-						}
-
-						.modal-them {
-							width: 100vw;
-							height: 100vh;
-							height: auto;
-							position: fixed;
-							top: 0;
-							left: 0;
-							right: 0;
-							bottom: 0;
-							background-color: rgba(0, 0, 0, 0.6);
-							z-index: 1000;
-							display: flex;
-							justify-content: center;
-							align-items: center;
-							display: none;
-
-						}
-
-						.card-body>table,
-						th,
-						td {
-							border: 1px solid black;
-							border-width: 1px;
-
-						}
-
-						td>button {
-							margin-left: 2px;
-							background-color: greenyellow;
-							border-radius: 10%;
-
-						}
-
-						.modal-them>table>tbody {
-							border: none;
-						}
-
-						.modal-them>table>tbody>tr {
-							border: none;
-						}
-
-						.modal-them>table>tbody>tr>td {
-							border: none;
-						}
-
-						.bi {
-
-							position: absolute;
-							right: 0;
-							top: 0;
-
-						}
-					</style> -->
 					<?php
 
 include_once('../../Model/xuatdulieu.php');
@@ -220,15 +150,15 @@ include_once('../../Model/xuatdulieu.php');
 							<form method="post">
 								<table class="table m-0">
 									<thead>
-									<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#momodalthem">thêm thành viên</button>
+									<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#momodalthem">Thêm khách hàng</button>
 										<tr>
-											<th>Mã Thành Viên</th>
-											<th>Tên Thành Viên</th>
+											<th>Mã Khách hàng</th>
+											<th>Tên Khách hàng</th>
 											<th>Số Điện Thoại</th>
 											<th>Email</th>
 											<th>Địa Chỉ</th>
 											<th>Giới Tính </th>
-											<th>tùy chỉnh</th>
+											<th>Tùy chỉnh</th>
 										</tr>
 									</thead>
 									<tbody>
