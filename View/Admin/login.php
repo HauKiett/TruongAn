@@ -114,7 +114,7 @@ if (isset($_POST["btDangnhap"])) {
                 function confirmExit() {
                     const confirmMessage = "Bạn muốn rời trang?";
                     if (confirm(confirmMessage)) {
-                        window.location.href = "../User/index.html"; // Điều hướng đến trang khác
+                        window.location.href = "../User/index.php"; // Điều hướng đến trang khác
                     }
                 }
                 </script>

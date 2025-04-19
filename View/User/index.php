@@ -1,5 +1,6 @@
 <?php
     include("header.php");
+    
     ?>
 <!doctype html>
 <html lang="en">
@@ -20,10 +21,9 @@
                         <div class="row">
                             <div class="col-xl-9 col-lg-9 col-md-10">
                                 <div class="hero__caption">
-                                    <span data-animation="fadeInLeft" data-delay="0.1s">welcome to </span>
-                                    <h1 data-animation="fadeInLeft" data-delay="0.4s">Gym Warm Guys</h1>
-                                    <a href="courses.html" class="border-btn hero-btn" data-animation="fadeInLeft"
-                                        data-delay="0.8s">My Courses</a>
+                                    <span data-animation="fadeInLeft" data-delay="0.1s" style="color:rgb(83, 191, 241)">Trường An</span> <br>
+                                    <a href="courses.php" class="border-btn hero-btn" data-animation="fadeInLeft"
+                                        data-delay="0.8s">Xem thêm</a>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                                 <img src="assets/img/gallery/cat1.png" alt="">
                                 <div class="topic-content-box">
                                     <div class="topic-content">
-                                        <h3>Personal traning</h3>
+                                        <h3 >Personal traning</h3>
                                         <p>You’ll look at graphs and charts in Task One, how to approach the task and
                                             <br> the language needed for a successful answer.
                                         </p>

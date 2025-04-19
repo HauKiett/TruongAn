@@ -12,6 +12,7 @@ Primary style
 html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: blue;
 }
 
 html {
