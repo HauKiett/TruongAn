@@ -72,9 +72,9 @@ $obj = new connect_database();
         <section class="team-area fix section-padding30">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-xl-12" style="background-color: #92ccff9c;">
+                    <div class="col-xl-12">
                         <div class="section-tittle text-center mb-55">
-                            <br> <br>
+                            <br>
                             <h2 >Sản phẩm</h2>
                         </div>
                     </div>
@@ -82,39 +82,40 @@ $obj = new connect_database();
                 
                     <!-- Block 1 -->
                     <?php
-                        $idloaisp = $_REQUEST['idloaisp'];
-                        if ($idloaisp)
-                            $sql = "SELECT * FROM thietbi WHERE idloaisp='$idloaisp'";
-                        else
-                            $sql = "SELECT * FROM thietbi";
-                        $sanpham = $obj->xuatdulieu($sql);
-                        if ($sanpham) {
-                            echo '<div class="container-fluid"><div class="row">';
-foreach ($sanpham as $sp) {
-    echo '
-    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-        <div class="product-card h-100">
-            <div class="product-image mb-3">
-                <img src="../Admin/assets/img/device/' . $sp["Hinhanh"] . '" alt="Ảnh sản phẩm" class="img-fluid">
-            </div>
-            <ul class="product-info list-unstyled">
-                <li class="fw-bold mb-2">
-                    <a href="chitietsanpham.php?' . $sp["MaTB"] . '">' . $sp["TenTB"] . '</a>
-                </li>
-                <li class="mb-2">Giá: ' . number_format($sp["gia"]) . ' VNĐ</li>
-                <li>
-                    <a href="dkytapthu.php?tensp=' . urlencode($sp["TenTB"]) . '&gia=' . $sp["gia"] . '" class="btn btn-primary btn-order w-100">Đặt hàng</a>
-                </li>
-            </ul>
-        </div>
-    </div>';
-}
-echo '</div></div>';
+$idloaisp = $_REQUEST['idloaisp'];
+if ($idloaisp)
+    $sql = "SELECT * FROM thietbi WHERE idloaisp='$idloaisp'";
+else
+    $sql = "SELECT * FROM thietbi";
+$sanpham = $obj->xuatdulieu($sql);
 
-                        } else {
-                            echo "<p class='text-center'>Hiện tại không có sản phẩm nào</p>";
-                        }
-                        ?>
+if ($sanpham) {
+    echo '<div class="container-fluid"><div class="row">';
+    foreach ($sanpham as $sp) {
+        echo '
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <div class="product-card">
+                <div class="product-image mb-3">
+                    <img src="../Admin/assets/img/device/' . $sp["Hinhanh"] . '" alt="Ảnh sản phẩm" class="img-fluid">
+                </div>
+                <ul class="product-info list-unstyled">
+                    <li class="fw-bold mb-2">
+                        <a href="chitietsanpham.php?MaTB=' . $sp["MaTB"] . '">' . $sp["TenTB"] . '</a>
+                    </li>
+                    <li class="mb-2">Giá: ' . number_format($sp["gia"]) . ' VNĐ</li>
+                    <li>
+                        <a href="dkytapthu.php?tensp=' . urlencode($sp["TenTB"]) . '&gia=' . $sp["gia"] . '" class="btn btn-primary btn-order w-100">Đặt hàng</a>
+                    </li>
+                </ul>
+            </div>
+        </div>';
+    }
+    echo '</div></div>';
+} else {
+    echo "<p class='text-center'>Hiện tại không có sản phẩm nào</p>";
+}
+?>
+
                     
         </section>
     </main>

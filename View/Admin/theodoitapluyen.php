@@ -1,11 +1,11 @@
 <?php
+session_start();
 include('sidebar.php');
 include_once('header.php');
+include_once('../../model/connect.php');
 ?>
 <!doctype html>
 <html lang="en">
-<?php session_start();
-?>
 
 <head>
 	<!-- Required meta tags -->

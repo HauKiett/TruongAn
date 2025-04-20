@@ -52,7 +52,6 @@ include_once('header.php');
         <div class="main-container">
 
             <?php
-			
             include('../../model/quanlyphanhoi.php');
             include('../../Controller/cquanlyphanhoi.php');
 			$obj = new phanhoi();
