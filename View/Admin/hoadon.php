@@ -49,7 +49,7 @@ $obj=new hoadondd();
                     <i class="bi bi-arrow-left-circle"></i> Quay lại
                 </a>
             </div>
-            <h3 class="text-center mb-4">Tạo hóa đơn</h3>
+            <h3 class="text-center mb-4">Lập hóa đơn</h3>
             <form method="post" class="shadow p-4 rounded bg-light">
                 <div class="mb-3">
                     <label for="Manv" class="form-label">Mã Nhân Viên</label>
