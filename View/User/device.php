@@ -79,8 +79,6 @@ $obj = new connect_database();
                         </div>
                     </div>
                 </div>
-                </div>
-                </div>
                 
                     <!-- Block 1 -->
                     <?php
@@ -124,5 +122,4 @@ echo '</div></div>';
 include("footer.php");
  ?>
 </body>
-
 </html>

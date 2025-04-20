@@ -32,7 +32,7 @@
                                     <td style="padding-top: 18px;">'.$gia.'</td>
 									<td style="padding-top: 18px;">'.$tingtrang.'</td>
 									<td>
-	                                    <img src="./assets/img_TruongAn/sanpham/'.$hinh.'" alt="" width="50px" height="50px">
+	                                    <img src="./assets/img/device/'.$hinh.'" alt="" width="50px" height="50px">
                                     </td>
                                     <form action=""   method="post">
 									    <td> 
