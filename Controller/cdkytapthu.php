@@ -30,12 +30,12 @@ if (isset($_POST["dkytap"])) {
     }
     if($ss==0){
                     // Chuẩn bị câu lệnh SQL để thêm vào cơ sở dữ liệu
-    $sql = "INSERT INTO khtapthu (Hoten, SDT, Email, CanCuoc, tensp, soluong, gia, Thoigianlienlac, diachi) 
-            VALUES ('$HoTen', '$SDT', '$Email', '$CanCuoc', '$tensp', '$soluong', '$gia', '$Thoigianlienlac', '$diachi')";
+    $sql = "INSERT INTO khtapthu (Hoten, SDT, Email, CanCuoc, tensp, soluong, gia, Thoigianlienlac, diachi, ngaylap) 
+            VALUES ('$HoTen', '$SDT', '$Email', '$CanCuoc', '$tensp', '$soluong', '$gia', '$Thoigianlienlac', '$diachi','')";
 
     // Thực thi câu lệnh SQL
     if ($obj->dkytapthu($sql)) {
-        echo "<script>alert('Đặt hàng thành công!'); window.location='dkytapthu.php';</script>";
+        echo "<script>alert('Đặt hàng thành công!'); window.location='thanhtoan.php';</script>";
     include('../../Model/xuatdulieu.php');
     $objj = new database();
     $mail = new PHPMailer\PHPMailer\PHPMailer(true);
@@ -79,11 +79,11 @@ if (isset($_POST["dkytap"])) {
     }
     }
     else{
-        echo "<script>alert('Đặt hàng thất bại!'); window.location='dkytapthu.php';</script>";
+        echo "<script>alert('Đặt hàng thất bại!'); window.location='thanhtoan.php';</script>";
     }
         }
         else{
-            echo "<script>alert('Thông tin đã có trên hệ thống'); window.location='dkytapthu.php';</script>";
+            echo "<script>alert('Thông tin đã có trên hệ thống'); window.location='thanhtoan.php';</script>";
         }
     }
 

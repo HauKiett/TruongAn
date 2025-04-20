@@ -1,5 +1,8 @@
 <?php
 error_reporting(1);
+session_start();
+    if (!$_SESSION["dangnhapKH"])
+        header("Location:dangky.php");
 include_once("../../Model/connect.php");
 include("header.php");
 $obj = new connect_database();
@@ -104,7 +107,7 @@ if ($sanpham) {
                     </li>
                     <li class="mb-2">Giá: ' . number_format($sp["gia"]) . ' VNĐ</li>
                     <li>
-                        <a href="dkytapthu.php?tensp=' . urlencode($sp["TenTB"]) . '&gia=' . $sp["gia"] . '" class="btn btn-primary btn-order w-100">Đặt hàng</a>
+                        <a href="dkytapthu.php?tensp=' . urlencode($sp["TenTB"]) . '&gia=' . $sp["gia"] . '&soluong=1" class="btn btn-primary btn-order w-100">Đặt hàng</a>
                     </li>
                 </ul>
             </div>

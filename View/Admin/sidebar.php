@@ -102,25 +102,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="sidebar-dropdown">
-                    <a href="#">
-                        <i class="bi bi-columns-gap"></i>
-                        <span class="menu-text">Thanh toán và gia hạn</span>
-                    </a>
-                    <div class="sidebar-submenu">
-                        <ul>
-                            <li>
-                                <a href="hoadon.php">Lập hóa đơn</a>
-                            </li>
-                            <li>
-                                <a href="hoadonchuatt.php">Hóa đơn chưa thanh toán</a>
-                            </li>
-                            <li>
-                                <a href="giahanthanhvien.php">Danh sách thành viên cần gia hạn</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                
                 <li class="sidebar-dropdown">
                     <a href="#">
                         <i class="bi bi-envelope"></i>
