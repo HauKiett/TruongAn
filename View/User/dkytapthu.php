@@ -1,7 +1,7 @@
 <?php
 include_once('../../model/quanlytapthu.php');
 include_once('../../Controller/cdkytapthu.php');
-include("header.php");
+include("header.php");  
 
 $tensp = isset($_GET['tensp']) ? $_GET['tensp'] : '';
 $gia = isset($_GET['gia']) ? $_GET['gia'] : '';

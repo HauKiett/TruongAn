@@ -18,11 +18,20 @@
 
                 </li>
                 <li class="sidebar-dropdown">
-                    <a href="dstapthu.php">
+                    <a href="#">
                         <i class="bi bi-person"></i>
-                        <span class="menu-text">Quản lý đặt hàng</span>
+                        <span class="menu-text">Quản lý đơn đặt hàng</span>
                     </a>
-
+                    <div class="sidebar-submenu">
+                        <ul>
+                            <li>
+                                <a href="dstapthu.php">Hóa đơn chờ duyệt</a>
+                            </li>
+                            <li>
+                                <a href="#">Hóa đơn đã duyệt</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="sidebar-dropdown">
                     <a href="#">
@@ -101,7 +110,7 @@
                     <div class="sidebar-submenu">
                         <ul>
                             <li>
-                                <a href="hoadon.php">Tạo hóa đơn</a>
+                                <a href="hoadon.php">Lập hóa đơn</a>
                             </li>
                             <li>
                                 <a href="hoadonchuatt.php">Hóa đơn chưa thanh toán</a>
