@@ -67,6 +67,7 @@ include_once('header.php');
 														<th>Số điện thoại</th>
 														<th>Email</th>
 														<th>Số Tên sản phẩm</th>
+														<th>Số lượng</th>
 														<th>Số Giá</th>
 														<th>Phương thức thanh toán</th>
 														<th>Địa chỉ</th>
@@ -80,6 +81,7 @@ include_once('header.php');
 														<td>'.$dstapthu[$i]["SDT"].'</td>
 														<td>'.$dstapthu[$i]["Email"].'</td>
 														<td>'.$dstapthu[$i]["tensp"].'</td>
+														<td>'.$dstapthu[$i]["soluong"].'</td>
 														<td>'.$dstapthu[$i]["gia"].'</td>
 														<td>'.$dstapthu[$i]["Thoigianlienlac"].'</td>
 														<td>'.$dstapthu[$i]["diachi"].'</td>

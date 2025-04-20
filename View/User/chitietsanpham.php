@@ -43,15 +43,20 @@ $sanpham=$obj->xuatdulieu($sql);
 
                 <label style="font-size: 18px;" for="quantity">Số lượng:</label>
                 <div class="quantity-control">
-                <button type="button" onclick="changeQuantity(-1)">-</button>
-                <input style="font-size: 18px;" type="number" id="quantity" value="1" min="1">
-                <button type="button" onclick="changeQuantity(1)">+</button>
+                    <button type="button" onclick="changeQuantity(-1)">-</button>
+                    <input style="font-size: 18px;" type="number" id="soluong" value="1" min="1">
+                    <button type="button" onclick="changeQuantity(1)">+</button>
                 </div>
+
+                <div class="header-btns d-none d-lg-block">
+                    <button onclick="redirectToForm()" class="buy-now">Mua ngay</button>
+                </div>
+            </div>
 
                 <?php
                 echo '<div class="header-btns d-none d-lg-block ">
                 <a href="dkytapthu.php?tensp='.urlencode($sanpham[0]["TenTB"]).'&gia='.$sanpham[0]["gia"].'" class="buy-now">Mua ngay</a>
-            </div>';
+                    </div>';
                 ?>
             </div>
         </div>
@@ -62,13 +67,22 @@ $sanpham=$obj->xuatdulieu($sql);
     </main>
 
 
+
 <script>
-function changeQuantity(delta) {
-    const input = document.getElementById('quantity');
-    let value = parseInt(input.value) || 1;
-    value += delta;
-    if (value < 1) value = 1;
-    input.value = value;
+function changeQuantity(amount) {
+    const qtyInput = document.getElementById("soluong");
+    let current = parseInt(qtyInput.value);
+    if (!isNaN(current)) {
+        current = Math.max(1, current + amount);
+        qtyInput.value = current;
+    }
+}
+
+function redirectToForm() {
+    const soluong = document.getElementById("soluong").value;
+    const tensp = "<?php echo urlencode($sanpham[0]['TenTB']); ?>";
+    const gia = "<?php echo $sanpham[0]['gia']; ?>";
+    window.location.href = `dkytapthu.php?tensp=${tensp}&gia=${gia}&soluong=${soluong}`;
 }
 </script>
 

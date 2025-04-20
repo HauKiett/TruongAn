@@ -12,6 +12,7 @@ if (isset($_POST["dkytap"])) {
     $Email = trim(strtolower($_POST['email']));
     $CanCuoc = $_POST["idCard"];
     $tensp = $_POST["tensp"];
+    $soluong = $_POST["soluong"];
     $gia = $_POST["gia"];
     $Thoigianlienlac = $_POST["Thoigianlienlac"];
     $diachi = $_POST["diachi"];
@@ -29,8 +30,8 @@ if (isset($_POST["dkytap"])) {
     }
     if($ss==0){
                     // Chuẩn bị câu lệnh SQL để thêm vào cơ sở dữ liệu
-    $sql = "INSERT INTO khtapthu (Hoten, SDT, Email, CanCuoc, tensp, gia, Thoigianlienlac, diachi) 
-            VALUES ('$HoTen', '$SDT', '$Email', '$CanCuoc', '$tensp', '$gia', '$Thoigianlienlac', '$diachi')";
+    $sql = "INSERT INTO khtapthu (Hoten, SDT, Email, CanCuoc, tensp, soluong, gia, Thoigianlienlac, diachi) 
+            VALUES ('$HoTen', '$SDT', '$Email', '$CanCuoc', '$tensp', '$soluong', '$gia', '$Thoigianlienlac', '$diachi')";
 
     // Thực thi câu lệnh SQL
     if ($obj->dkytapthu($sql)) {

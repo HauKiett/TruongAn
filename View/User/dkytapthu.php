@@ -5,6 +5,7 @@ include("header.php");
 
 $tensp = isset($_GET['tensp']) ? $_GET['tensp'] : '';
 $gia = isset($_GET['gia']) ? $_GET['gia'] : '';
+$soluong = isset($_GET['soluong']) ? $_GET['soluong'] : '';
 ?>
 <!doctype html>
 <html lang="en">
@@ -115,6 +116,12 @@ $gia = isset($_GET['gia']) ? $_GET['gia'] : '';
                 <div class="form-group">
                     <label for="gia">Giá:</label>
                     <input type="text" name="gia" value="<?php echo htmlspecialchars($gia); ?>">
+                </div>
+
+                <div class="form-group">
+                    <label for="soluong">Số lượng:</label>
+                    <input type="number" name="soluong" min="1" value="<?php echo htmlspecialchars($soluong); ?>"
+                        title="Vui lòng nhập số lượng.">
                 </div>
 
                 <div class="form-group">
