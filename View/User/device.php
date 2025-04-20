@@ -45,18 +45,18 @@ $obj = new connect_database();
                             echo '<div class="row">
                             <div class="col-lg-6 d-flex align-items-center">
                             <div class="row w-100">
-                                <div class="col-lg-4">
+                                <div class="col-lg-4" >
                                     <div class="img-fluid"><img src="../Admin/assets/img/device/'.$sanpham[$i]["Hinhanh"].'" /></div>
                                 </div>
                                 <div class="col-lg-8">
                                 <ul class="text-blue" style="font-size: 30px;">
-                                    <li class="d-flex justify-content-between align-items-center" style="gap:10px">
-                                        <div class="label-text fw-normal">Tên sản phẩm:</div>
-                                        <div class="label-title text-space fw-bold"><a href="chitietsanpham.php?'.$sanpham[$i]["MaTB"].'">'.$sanpham[$i]["TenTB"].'</a></div>
+                                    <li class="d-flex justify-content-between align-items-center" style="gap:10px" >
+                                        <div class="label-text fw-normal" ><a href="chitietsanpham.php?MaTB='.$sanpham[$i]["MaTB"].'">Tên sản phẩm:</a></div>
+                                        <div class="label-title text-space fw-bold"><a href="chitietsanpham.php?MaTB='.$sanpham[$i]["MaTB"].'">'.$sanpham[$i]["TenTB"].'</a></div>
                                     </li>
                                     <li class="d-flex justify-content-between align-items-center" style="gap:10px">
-                                        <div class="label-text fw-normal">Giá:</div>
-                                        <div class="label-title text-space">Giá: '.number_format($sanpham[$i]["gia"]).'</div>
+                                        <div class="label-title text-space fw-bold" >Giá:</div>
+                                        <div class="label-title text-space" >'.number_format($sanpham[$i]["gia"]).'</div>
                                     </li>
                                     <li>
                                     <div class="header-btns d-none d-lg-block ">
