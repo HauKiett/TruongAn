@@ -1,7 +1,8 @@
-<?php session_start();
-$idSua = 1;
+<?php 
+session_start();
 include('sidebar.php');
 include_once('header.php');
+$idSua = 1;
 ?>
 <!doctype html>
 <html lang="en">
@@ -51,8 +52,8 @@ include_once('header.php');
 			<?php
 			
             include('../../model/quanlydoanhthu.php');
-			$obj = new hoadon();
-            $hoadon = $obj->danhsachhoadon();
+			$obj = new hoadontt();
+            $hoadon = $obj->danhsachhoadontt();
 			$tong=0;
 			if ($hoadon) {
             echo '    <div class="row" style="margin-left: 10px;">
@@ -78,41 +79,29 @@ include_once('header.php');
 											<table class="table m-0">
 												<thead>
 													<tr>
-														<th>Mã Hóa Đơn</th>
+														<th>Mã hóa đơn</th>
+														<th>Tên sản phẩm</th>
+														<th>Số Lượng</th>
 														<th>Ngày lập</th>
-														<th>Trạng thái thanh toán</th>
-														<th>Tên thành viên</th>
-														<th>Tên gói</th>
-														<th>Giá gói</th>
-														<th>Thời hạn gói</th>
-                                                        <th>Mã Khuyến mãi</th>
-                                                        <th>Thành tiền</th>
+														<th>Giá</th>
 													</tr>
 												</thead>
 												<tbody>';
 			for ($i = 0; $i < count($hoadon); $i++) {
-				$tong+=$hoadon[$i]["ThanhTien"];
+				$tong+=$hoadon[$i]["gia"];
 							echo                       '<tr>
-														<td>'.$hoadon[$i]["MaHD"].'</td>
-														<td>'.date('d/m/Y', strtotime($hoadon[$i]["NgayLap"])).'</td>
-														<td>'.$hoadon[$i]["TrangThaiTT"].'</td>
-														<td>'.$hoadon[$i]["TenTV"].'</td>
-														<td>'.$hoadon[$i]["TenGoi"].'</td>
-														<td>'.number_format($hoadon[$i]["GiaGoi"]).' VND</td>
-														<td>'.$hoadon[$i]["ThoiHanGoi"].' Tháng </td>
-                                                        <td>'.$hoadon[$i]["MaKM"].'</td>
-                                                        <td>'.number_format($hoadon[$i]["ThanhTien"]).' VND</td>
+														<td>'.$hoadon[$i]["ID"].'</td>
+														<td>'.$hoadon[$i]["tensp"].'</td>
+														<td>'.$hoadon[$i]["soluong"].'</td>
+														<td>'.$hoadon[$i]["ngaylap"].'</td>
+														<td>'.$hoadon[$i]["gia"].'</td>														
 													</tr>
                                                     ';}
                 echo '
 						<tr>
 														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
                                                         <td></td>
+														<td></td>
 														<td></td>
                                                         <td>Tổng : '.number_format($tong).' VND</td>
 													</tr>
@@ -146,15 +135,15 @@ include_once('header.php');
 								<table class="table m-0">
 									<thead>
 										<tr>
-											<th>Mã Hóa Đơn</th>
-											<th>Ngày lập</th>
-											<th>Mã thành viên</th>
-											<th>Tên thành viên</th>
-											<th>Tên gói</th>
-											<th>Giá gói</th>
-											<th>Thời hạn gói</th>
-											<th>Loại Khuyến mãi</th>
-											<th>Thành tiền</th>
+											<th>Mã KH</th>
+														<th>Họ và tên</th>
+														<th>Số điện thoại</th>
+														<th>Email</th>
+														<th>Số Tên sản phẩm</th>
+														<th>Phương thức thanh toán</th>
+														<th>Địa chỉ</th>
+														<th>Ngày lập</th>
+														<th>Số Giá</th>
 										</tr>
 									</thead>
 									<tbody>';
@@ -168,7 +157,7 @@ include_once('header.php');
 											<td></td>
 											<td></td>
 											<td></td>
-											<td></td>
+										
 										</tr>
 	</tbody>
 			</table>

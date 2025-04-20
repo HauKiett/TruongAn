@@ -28,7 +28,7 @@
                                 <a href="dstapthu.php">Hóa đơn chờ duyệt</a>
                             </li>
                             <li>
-                                <a href="#">Hóa đơn đã duyệt</a>
+                                <a href="dstapthudd.php">Hóa đơn đã duyệt</a>
                             </li>
                         </ul>
                     </div>
