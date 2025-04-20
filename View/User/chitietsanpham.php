@@ -47,22 +47,17 @@ $sanpham=$obj->xuatdulieu($sql);
                     <input style="font-size: 18px;" type="number" id="soluong" value="1" min="1">
                     <button type="button" onclick="changeQuantity(1)">+</button>
                 </div>
-
                 <div class="header-btns d-none d-lg-block">
-                    <button onclick="redirectToForm()" class="buy-now">Mua ngay</button>
-                </div>
-            </div>
+                            <button onclick="redirectToForm()" class="buy-now">Mua ngay</button>
+                            <button onclick="addToCart()" class="buy-now">Thêm vào giỏ hàng</button>
+                        </div>
 
-                <?php
-                echo '<div class="header-btns d-none d-lg-block ">
-                <a href="dkytapthu.php?tensp='.urlencode($sanpham[0]["TenTB"]).'&gia='.$sanpham[0]["gia"].'" class="buy-now">Mua ngay</a>
-                    </div>';
-                ?>
+            </div>
             </div>
         </div>
     </div>
         
-        
+
                     
     </main>
 
@@ -80,10 +75,19 @@ function changeQuantity(amount) {
 
 function redirectToForm() {
     const soluong = document.getElementById("soluong").value;
-    const tensp = "<?php echo urlencode($sanpham[0]['TenTB']); ?>";
+    const TenTB = "<?php echo urlencode($sanpham[0]['TenTB']); ?>";
     const gia = "<?php echo $sanpham[0]['gia']; ?>";
-    window.location.href = `dkytapthu.php?tensp=${tensp}&gia=${gia}&soluong=${soluong}`;
+    window.location.href = `dkytapthu.php?tensp=${TenTB}&gia=${gia}&soluong=${soluong}`;
 }
+function addToCart() {
+    const soluong = document.getElementById("soluong").value;
+    const TenTB = "<?php echo urlencode($sanpham[0]['TenTB']); ?>";
+    const gia = "<?php echo $sanpham[0]['gia']; ?>";
+    const hinhanh = "<?php echo urlencode($sanpham[0]['Hinhanh']); ?>";
+
+    window.location.href = `giohang.php?TenTB=${TenTB}&gia=${gia}&soluong=${soluong}&Hinhanh=${hinhanh}`;
+}
+
 </script>
 
 

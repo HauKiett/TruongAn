@@ -35,7 +35,7 @@ if (isset($_POST["dkytap"])) {
 
     // Thực thi câu lệnh SQL
     if ($obj->dkytapthu($sql)) {
-        echo "<script>alert('Đặt hàng thành công!'); window.location='dkytapthu.php';</script>";
+        echo "<script>alert('Đặt hàng thành công!'); window.location='thanhtoan.php';</script>";
     include('../../Model/xuatdulieu.php');
     $objj = new database();
     $mail = new PHPMailer\PHPMailer\PHPMailer(true);
@@ -79,11 +79,11 @@ if (isset($_POST["dkytap"])) {
     }
     }
     else{
-        echo "<script>alert('Đặt hàng thất bại!'); window.location='dkytapthu.php';</script>";
+        echo "<script>alert('Đặt hàng thất bại!'); window.location='thanhtoan.php';</script>";
     }
         }
         else{
-            echo "<script>alert('Thông tin đã có trên hệ thống'); window.location='dkytapthu.php';</script>";
+            echo "<script>alert('Thông tin đã có trên hệ thống'); window.location='thanhtoan.php';</script>";
         }
     }
 

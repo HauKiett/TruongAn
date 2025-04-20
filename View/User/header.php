@@ -66,7 +66,7 @@
                                     <li><a href="contact.php">Phản hồi</a></li>
                                     <li><a href="danhgia.php">Đánh giá</a></li>
                                     <li><a href="../Admin/index.php">quản lý</a></li>
-                                    <li><a href="index1.php">SP</a></li>
+                                    <li><a href="xemgiohang.php">Giỏ hàng</a></li>
                                 </ul>
                             </nav>
                         </div>

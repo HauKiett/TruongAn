@@ -9,9 +9,8 @@ $p = new deviceQL();
             $name = $_FILES['myfile']['name'];
             $tmp_name = $_FILES['myfile']['tmp_name'];
             $gia=$_POST["gia"];
-            $soluong = $_POST["soluong"];
             $folder = "./assets/img/device/";
-            
+ 
             
                    // Gán giá trị bằng tên
             $tingtrang_names = [
@@ -33,8 +32,8 @@ $p = new deviceQL();
                     $name = time() . '_' . $name;
                     if ($p->uploadfile($name, $tmp_name, $folder)) {
                         // Chuẩn bị câu lệnh SQL để thêm vào cơ sở dữ liệu
-                        $sql = "INSERT INTO thietbi (TenTB, idloaisp, TinhTrangTB, Hinhanh, gia, soluong) 
-                                VALUES ('$tenTB', '$idloaisp', '$tingtrang_names', '$name','$gia', '$soluong')";
+                        $sql = "INSERT INTO thietbi (TenTB, idloaisp, TinhTrangTB, Hinhanh, gia) 
+                                VALUES ('$tenTB', '$idloaisp', '$tingtrang_names', '$name','$gia')";
         
                         // Thực thi câu lệnh SQL
                         if ($p->themthietbi($sql)) {
@@ -72,7 +71,6 @@ $p = new deviceQL();
             $tinhtrang = $_POST["tinhtrang"];
             $hinhanh = $_FILES['myfile']; // Hình ảnh (nếu có)
             $gia = $_POST["gia"];
-            $soluong=$_POST["soluong"];
         
             // Chuyển đổi giá trị của Loại thiết bị và Tình trạng
 
@@ -83,7 +81,7 @@ $p = new deviceQL();
             ];
         
             $tingtrang_names = $tingtrang_names[$tinhtrang];
-            if ($p->Capnhatthietbi($idTB, $tenTB, $idloaisp, $tingtrang_names, $hinhanh, $gia), $soluong==1) {
+            if ($p->Capnhatthietbi($idTB, $tenTB, $idloaisp, $tingtrang_names, $hinhanh, $gia)==1) {
                 echo "<script>alert('Cập nhật thiết bị thành công!'); window.location='device.php';</script>";
             } else {
                 echo "<script>alert('Cập nhật thiết bị thất bại!');</script>";
