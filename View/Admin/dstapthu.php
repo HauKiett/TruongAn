@@ -40,6 +40,20 @@ include_once('header.php');
 			float: left;
 			padding-left:50px
 		}
+		.table thead th {
+    background-color: #f0f4f8;
+    font-weight: 600;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.table td form {
+    margin: 0;
+}
+
 		</style>
 
 	</head>
@@ -49,17 +63,17 @@ include_once('header.php');
 		<div class="page-wrapper">
 			<div class="main-container">
 			<?php
-			
-            include('../../model/quanlytapthu.php');
-			$obj = new dkytapthu();
-            $dstapthu = $obj->dsdkytapthu();
+			include('../../model/quanlyhoadon.php');
+            include('../../controller/cquanlyhoadon.php');
+			$obj = new hoadon();
+            $dstapthu = $obj->danhsachhoadon();
 			if ($dstapthu) {
             echo '    <div class="row" style="margin-left: 10px;">
 							<div class="col-12">
-							<h4>Danh sách khách hàng đặt hàng</h4>
+							<h4>Danh sách khách hàng chờ duyệt</h4>
 									<div class="card-body">
-										<div class="table-responsive">
-											<table class="table m-0">
+										<div class="table-responsive" style="overflow-x: auto;">
+											<table class="table table-bordered table-hover align-middle text-center table-striped" style="min-width: 1000px;">
 												<thead>
 													<tr>
 														<th>Mã KH</th>
@@ -67,7 +81,7 @@ include_once('header.php');
 														<th>Số điện thoại</th>
 														<th>Email</th>
 														<th>Số Tên sản phẩm</th>
-														<th>Số lượng</th>
+														<th>Số Lượng</th>
 														<th>Số Giá</th>
 														<th>Phương thức thanh toán</th>
 														<th>Địa chỉ</th>
@@ -85,7 +99,14 @@ include_once('header.php');
 														<td>'.$dstapthu[$i]["gia"].'</td>
 														<td>'.$dstapthu[$i]["Thoigianlienlac"].'</td>
 														<td>'.$dstapthu[$i]["diachi"].'</td>
-														</tr>
+														
+														<td>					
+                                <form method="POST" style="display:inline-block;">
+                                    <button type="submit" class="btn btn-outline-danger" name="btDuyetHD" value="' . $dstapthu[$i]["ID"] . '">Duyệt</button>
+                                    <button type="submit" class="btn btn-outline-danger" onclick="return confirm(\'Bạn có chắc muốn xóa hóa đơn này không?\')" name="btXoaHD" value="' . $dstapthu[$i]["ID"] . '">Xóa</button>
+                                </form>
+								</td>
+								</tr>
                                                     ';}
                 echo '
 				</tbody>
@@ -94,6 +115,40 @@ include_once('header.php');
                 </div>
             </div>
             </div>'; }
+			else echo '    <div class="row" style="margin-left: 10px;">
+			<div class="col-12">
+			<h4>Danh sách khách hàng chờ duyệt</h4>
+					<div class="card-body">
+						<div class="table-responsive" style="overflow-x: auto;">
+							<table class="table table-bordered table-hover align-middle text-center table-striped" style="min-width: 1000px;">
+								<thead>
+									<tr>
+										<th>Mã KH</th>
+										<th>Họ và tên</th>
+										<th>Số điện thoại</th>
+										<th>Email</th>
+										<th>Số Tên sản phẩm</th>
+										<th>Số Lượng</th>
+										<th>Số Giá</th>
+										<th>Phương thức thanh toán</th>
+										<th>Địa chỉ</th>
+									</tr>
+								</thead>
+								<tbody>
+			                   <tr>
+										<td>Không có hóa đơn nào cần duyệt</td>
+										<td></td>
+										<td></td><td></td><td></td><td></td><td></td><td></td>
+										<td>					
+				</td>
+				</tr>
+</tbody>
+		</table>
+	</div>
+</div>
+</div>
+</div>';
+
 			?>
 		<!-- Page wrapper end -->
 
