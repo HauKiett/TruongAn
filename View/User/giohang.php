@@ -1,5 +1,7 @@
 <?php
 session_start();
+if (!$_SESSION["dangnhapKH"])
+    header("Location:dangky.php");
 
 // Lấy thông tin sản phẩm từ URL
 if (isset($_GET['TenTB']) && isset($_GET['gia']) && isset($_GET['soluong']) && isset($_GET['Hinhanh'])) {

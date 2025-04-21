@@ -1,5 +1,7 @@
 <?php
 session_start();
+if (!$_SESSION["dangnhapKH"])
+    header("Location:dangky.php");
 
 if (isset($_GET['index'])) {
     $index = intval($_GET['index']);
