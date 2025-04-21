@@ -1,10 +1,10 @@
 <?php
 session_start();
-if (!$_SESSION["dangnhapKH"])
+if (!$_SESSION["dangnhapKH"]){
     header("Location:dangky.php");
 include_once('../../model/quanlytapthu.php');
 include_once('../../Controller/cdkytapthu.php');
-include("header.php");  
+include("header.php"); }
 
 $tensp = isset($_GET['tensp']) ? $_GET['tensp'] : '';
 $gia = isset($_GET['gia']) ? $_GET['gia'] : '';
@@ -113,18 +113,33 @@ $soluong = isset($_GET['soluong']) ? $_GET['soluong'] : '';
 
                 <div class="form-group">
                     <label for="tensp">Tên sản phẩm:</label>
-                    <input type="text" name="tensp" value="<?php echo htmlspecialchars($tensp); ?>">
+                    <input type="text" name="tensp[]" value="<?php echo htmlspecialchars($tensp); ?>" readonly>
                 </div>
 
                 <div class="form-group">
                     <label for="gia">Giá:</label>
-                    <input type="text" name="gia" value="<?php echo htmlspecialchars($gia); ?>">
+                    <input type="text" name="gia[]" value="<?php echo htmlspecialchars($gia); ?>" readonly>
                 </div>
+
 
                 <div class="form-group">
                     <label for="soluong">Số lượng:</label>
-                    <input type="number" name="soluong" min="1" value="<?php echo htmlspecialchars($soluong); ?>"
-                        title="Vui lòng nhập số lượng.">
+                    <div style="display: flex; gap: 10px; text-align: center;">
+                        <button type="button" onclick="tangGiamSL(-1)">-</button>
+                        <input type="number" name="soluong[]" id="soluong" min="1" value="<?php echo $soluong; ?>" readonly>
+                        <button type="button" onclick="tangGiamSL(1)">+</button>
+                    </div>
+                </div>
+
+                <?php
+                    $gia = isset($_GET['gia']) ? (int)$_GET['gia'] : 0;
+                    $soluong = isset($_GET['soluong']) ? (int)$_GET['soluong'] : 1;
+                    $tongtien = $gia * $soluong;
+                    ?>
+                <div class="form-group">
+                    <label for="tongtien">Tổng tiền:</label>
+                    <input type="text" id="tongtien_view" value="<?php echo number_format($tongtien); ?> đ" readonly>
+                    <input type="hidden" name="tongtien[]" id="tongtien" value="<?php echo $tongtien; ?>">
                 </div>
 
                 <div class="form-group">
@@ -153,6 +168,24 @@ $soluong = isset($_GET['soluong']) ? $_GET['soluong'] : '';
         function cancelForm() {
             document.getElementById("registrationForm").reset();
             alert("Đã hủy đăng ký");
+        }
+        function tangGiamSL(amount) {
+            const soluongInput = document.getElementById("soluong");
+            const tongtienView = document.getElementById("tongtien_view");
+            const tongtienHidden = document.getElementById("tongtien");
+            const gia = <?php echo $gia; ?>; // Gía đã được gán sẵn ở PHP
+
+            let soluong = parseInt(soluongInput.value);
+            if (isNaN(soluong)) soluong = 1;
+
+            soluong += amount;
+            if (soluong < 1) soluong = 1;
+
+            const tong = gia * soluong;
+
+            soluongInput.value = soluong;
+            tongtienHidden.value = tong;
+            tongtienView.value = tong.toLocaleString('vi-VN') + " đ";
         }
         </script>
 

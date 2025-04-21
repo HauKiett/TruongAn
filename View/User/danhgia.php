@@ -1,8 +1,7 @@
 <?php
+include_once('../../Model/xuatdulieu.php');
 session_start();
-    if (!$_SESSION["dangnhapKH"])
-    header("Location:dangky.php");
-include("header.php");
+    include("header1.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
