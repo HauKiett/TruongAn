@@ -1,21 +1,5 @@
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
-<?php
-            
-            include_once('../../Model/xuatdulieu.php');
-            $objjj = new database();
-            
-            
-            if (isset($_SESSION['tenKH'])) {
-                $emailll = $_SESSION['tenKH']; // Lấy giá trị từ session
-                $emailll = trim($emailll);
-            
-                // Câu truy vấn với giá trị từ session
-              $sql = "SELECT *  FROM thanhvien WHERE EmailTV = '$emailll'";
-                $taikhoan = $objjj->danhsachtaikhoanKH($sql);
-            
-            }
-?>
 
 <head>
     <meta charset="utf-8">
@@ -84,44 +68,15 @@
                                     <li><a href="../Admin/index.php">quản lý</a></li>
                                     <li><a href="xemgiohang.php">Giỏ hàng</a></li>
                                 </ul>
-                                
                             </nav>
                         </div>
-                        <div class="header-btns d-none d-lg-block f-right">
-                        <ul class="header-actions">
-
-<li class="dropdown">
-    <a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
-        <span class="user-name d-none d-md-block">       
-            
-        <span class="avatar">
-            <img src="assets/img_TruongAn/avatar/avatar.png" style="width: 30px;" alt="Admin Templates">
-            <?php echo htmlspecialchars($taikhoan[0]["TenTV"], ENT_QUOTES, 'UTF-8');?>  
-        </span>
-            <span class="status online"></span>
-        </span>
-    </a>
-    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userSettings">
-        <div class="header-profile-actions">
-            <ul>
-                <li>Mã TV : <?php echo htmlspecialchars($taikhoan[0]["MaTV"], ENT_QUOTES, 'UTF-8');?></li>
-            </ul>
-            <a href="#" onclick="confirmLogout()">Đăng xuất</a>
-
-            <script>
-            function confirmLogout() {
-                if (confirm("Bạn có chắc chắn muốn đăng xuất không?")) {
-                    window.location.href =
-                        "logout.php"; // Điều hướng tới trang logout.php nếu người dùng xác nhận
-                }
-            }
-            </script>
-        </div>
-    </div>
-</li>
-</ul>
-                        </div>
                         <!-- Header-btn -->
+                        <div class="header-btns d-none d-lg-block f-right">
+                            <a href="login.php" class="btn">Đăng Nhập</a>
+                        </div>
+                        <div class="header-btns d-none d-lg-block f-right">
+                            <a href="dangky.php" class="btn">Đăng Kí</a>
+                        </div>
                         <!-- Mobile Menu -->
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>

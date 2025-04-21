@@ -24,6 +24,18 @@ class connect_database
         } else
             return 0;
     }
+    public function dangnhaptaikhoanKH($username, $password)
+    {
+        //$password=md5($password);
+        $sql = "SELECT * FROM thanhvien WHERE EmailTV = '$username' AND MatKhauTV = '$password'";
+        $link = $this->connect();
+        $result = $link->query($sql);
+        if ($result->num_rows) {
+            $row = $result->fetch_assoc();
+            return $row;
+        } else
+            return 0;
+    }
     public function xuatdulieu($sql)
     {
         $arr=array();

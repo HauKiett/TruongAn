@@ -1,5 +1,7 @@
 <?php
 session_start();
+    if (!$_SESSION["dangnhapKH"])
+    header("Location:dangky.php");
 include("header.php");
 ?>
 <!DOCTYPE html>
@@ -21,9 +23,8 @@ include("header.php");
         <!--? Gallery Area Start -->
         <div class="gallery-area">
         <?php
-                include('../../Model/xuatdulieu.php');
+                
 					$obj = new database();
-
 					$danhgia = $obj->danhsachdanhgia();
 
 					// xử lý

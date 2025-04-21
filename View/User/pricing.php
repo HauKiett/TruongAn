@@ -1,4 +1,7 @@
 <?php
+session_start();
+if (!$_SESSION["dangnhapKH"])
+    header("Location:dangky.php");
 include("header.php");
 ?>
 <!doctype html>

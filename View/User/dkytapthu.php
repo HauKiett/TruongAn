@@ -1,4 +1,7 @@
 <?php
+session_start();
+if (!$_SESSION["dangnhapKH"])
+    header("Location:dangky.php");
 include_once('../../model/quanlytapthu.php');
 include_once('../../Controller/cdkytapthu.php');
 include("header.php");  
