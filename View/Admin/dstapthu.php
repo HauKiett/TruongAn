@@ -132,6 +132,7 @@ include_once('header.php');
 										<th>Số Giá</th>
 										<th>Phương thức thanh toán</th>
 										<th>Địa chỉ</th>
+										<th>Tuỳ chọn</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -151,11 +152,6 @@ include_once('header.php');
 
 			?>
 		<!-- Page wrapper end -->
-
-
-
-
-
 
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/bootstrap.bundle.min.js"></script>

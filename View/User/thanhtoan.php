@@ -8,6 +8,10 @@ $count = 0;
 while (isset($_GET["TenTB{$count}"])) {
     $count++;
 }
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["tensp"])) {
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +83,12 @@ while (isset($_GET["TenTB{$count}"])) {
 
                 <button type="submit" name="dkytap" class="btn-submit">Xác nhận</button> 
                 <button type="button" class="btn btn-cancel" onclick="cancelForm()">Hủy</button>
-                
+                <?php for ($i = 0; $i < $count; $i++): ?>
+                    <input type="hidden" name="tensp[]" value="<?php echo htmlspecialchars($_GET["TenTB$i"]); ?>">
+                    <input type="hidden" name="soluong[]" value="<?php echo $_GET["soluong$i"]; ?>">
+                    <input type="hidden" name="gia[]" value="<?php echo $_GET["gia$i"]; ?>">
+                    <input type="hidden" name="tongtien[]" value="<?php echo $_GET["tongtien$i"]; ?>">
+                <?php endfor; ?>
             </form>
         </div>
 
@@ -110,5 +119,6 @@ while (isset($_GET["TenTB{$count}"])) {
             alert("Đã hủy đăng ký");
         }
         </script>
+
 </body>
 </html>

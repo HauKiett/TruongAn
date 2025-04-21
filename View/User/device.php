@@ -1,8 +1,6 @@
 <?php
 error_reporting(1);
 session_start();
-    if (!$_SESSION["dangnhapKH"])
-        header("Location:dangky.php");
 include_once("../../Model/connect.php");
 include("header.php");
 $obj = new connect_database();
