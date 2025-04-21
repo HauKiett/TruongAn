@@ -81,26 +81,29 @@ $idSua = 1;
 													<tr>
 														<th>Mã hóa đơn</th>
 														<th>Tên sản phẩm</th>
-														<th>Số Lượng</th>
 														<th>Ngày lập</th>
+														<th>Số Lượng</th>	
 														<th>Giá</th>
+														<th>Tổng Giá</th>
 													</tr>
 												</thead>
 												<tbody>';
 			for ($i = 0; $i < count($hoadon); $i++) {
-				$tong+=$hoadon[$i]["gia"];
+				$tong+=($hoadon[$i]["gia"]*$hoadon[$i]["soluong"]);
 							echo                       '<tr>
 														<td>'.$hoadon[$i]["ID"].'</td>
 														<td>'.$hoadon[$i]["tensp"].'</td>
-														<td>'.$hoadon[$i]["soluong"].'</td>
 														<td>'.$hoadon[$i]["ngaylap"].'</td>
-														<td>'.$hoadon[$i]["gia"].'</td>														
+														<td>'.$hoadon[$i]["soluong"].'</td>
+														<td>'.$hoadon[$i]["gia"].'</td>	
+														<td>'.$hoadon[$i]["gia"]*$hoadon[$i]["soluong"].'</td>														
 													</tr>
                                                     ';}
                 echo '
 						<tr>
 														<td></td>
                                                         <td></td>
+														<td></td>
 														<td></td>
 														<td></td>
                                                         <td>Tổng : '.number_format($tong).' VND</td>

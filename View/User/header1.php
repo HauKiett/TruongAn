@@ -1,3 +1,20 @@
+
+<?php
+            
+            include_once('../../Model/xuatdulieu.php');
+            $objjj = new database();
+            
+            
+            if (isset($_SESSION['tenKH'])) {
+                $emailll = $_SESSION['tenKH']; // Lấy giá trị từ session
+                $emailll = trim($emailll);
+            
+                // Câu truy vấn với giá trị từ session
+              $sql = "SELECT *  FROM thanhvien WHERE EmailTV = '$emailll'";
+                $taikhoan = $objjj->danhsachtaikhoanKH($sql);
+            
+            }
+?>
 <!DOCTYPE html>
 <html class="no-js" lang="zxx">
 
@@ -51,7 +68,67 @@
                             <a href="index.php"><img src="assets/img_TruongAn/logo/logo.webp" style="width:100px;" alt=""></a>
                         </div>
                         <!-- Main-menu -->
-                        <div class="main-menu f-right d-none d-lg-block">
+                        <?php
+                        error_reporting(1);
+                        
+if ($_SESSION["dangnhapKH"]){
+    echo '<div class="main-menu f-right d-none d-lg-block">
+                            <nav>
+                                <ul id="navigation">
+                                    <li><a href="index.php">Trang chủ</a></li>
+                                    <li><a href="device.php">Sản phẩm</a></li>
+                                    <li><a href="gallery.php">Khuyến Mãi</a></li>
+                                        <ul class="submenu">
+                                            <li><a href="blog.php">Tin mới</a></li>
+                                            <li><a href="blog_details.php">Thông tin chi tiết</a></li>
+                                            <li><a href="elements.php">Yếu tố</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.php">Phản hồi</a></li>
+                                    <li><a href="danhgia.php">Đánh giá</a></li>
+                                    <li><a href="../Admin/index.php">quản lý</a></li>
+                                    <li><a href="xemgiohang.php">Giỏ hàng</a></li>
+                                </ul>
+                            </nav>
+                        </div>';
+                        echo '
+                        <div class="header-btns d-none d-lg-block f-right">
+                        <ul class="header-actions">
+
+<li class="dropdown">
+    <a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
+        <span class="user-name d-none d-md-block">       
+            
+        <span class="avatar">
+            <img src="assets/img_TruongAn/avatar/avatar.png" style="width: 30px;" alt="Admin Templates">';
+           echo htmlspecialchars($taikhoan[0]["TenTV"], ENT_QUOTES, 'UTF-8');
+        echo '</span>
+            <span class="status online"></span>
+        </span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userSettings">
+        <div class="header-profile-actions">
+            <ul>
+                <li>Mã TV : '; echo htmlspecialchars($taikhoan[0]["MaTV"], ENT_QUOTES, 'UTF-8');
+                echo '</li>
+            </ul>
+            <a href="#" onclick="confirmLogout()">Đăng xuất</a>
+
+            <script>
+            function confirmLogout() {
+                if (confirm("Bạn có chắc chắn muốn đăng xuất không?")) {
+                    window.location.href =
+                        "logout.php"; // Điều hướng tới trang logout.php nếu người dùng xác nhận
+                }
+            }
+            </script>
+        </div>
+    </div>
+</li>
+</ul>
+</div>';}
+                    else {
+                        echo '<div class="main-menu f-right d-none d-lg-block">
                             <nav>
                                 <ul id="navigation">
                                     <li><a href="index.php">Trang chủ</a></li>
@@ -80,7 +157,11 @@
                         <!-- Mobile Menu -->
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
+                        </div>';
+                    }
+
+?>
+                        
                     </div>
                 </div>
             </div>

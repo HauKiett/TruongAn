@@ -1,8 +1,5 @@
 <?php
-session_start();
-if (!$_SESSION["dangnhapKH"])
-    header("Location:dangky.php");
-include("header.php");
+include("header1.php");
 ?>
 <!doctype html>
 <html lang="en">

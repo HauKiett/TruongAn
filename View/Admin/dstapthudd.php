@@ -82,7 +82,8 @@ include_once('header.php');
 														<th>Email</th>
 														<th>Số Tên sản phẩm</th>
 														<th>Số Lượng</th>
-														<th>Số Giá</th>
+														<th>Đơn Giá</th>
+														<th>Tổng Giá</th>
 														<th>Phương thức thanh toán</th>
 														<th>Địa chỉ</th>
 													</tr>
@@ -97,6 +98,7 @@ include_once('header.php');
 														<td>'.$dstapthu[$i]["tensp"].'</td>
 														<td>'.$dstapthu[$i]["soluong"].'</td>
 														<td>'.$dstapthu[$i]["gia"].'</td>
+														<td>'.$dstapthu[$i]["gia"]*$dstapthu[$i]["soluong"].'</td>
 														<td>'.$dstapthu[$i]["Thoigianlienlac"].'</td>
 														<td>'.$dstapthu[$i]["diachi"].'</td>
 								</tr>
