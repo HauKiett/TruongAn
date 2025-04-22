@@ -1,7 +1,4 @@
 <?php
-session_start();
-if (!$_SESSION["dangnhapKH"])
-    header("Location:dangky.php");
 include_once('../../model/quanlytapthu.php');
 include_once('../../Controller/cdkytapthu.php');
 $count = 0;
@@ -117,6 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["tensp"])) {
         function cancelForm() {
             document.getElementById("registrationForm").reset();
             alert("Đã hủy đăng ký");
+            <?php echo "window.location.href = 'index.php'; "?>
         }
         </script>
 

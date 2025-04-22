@@ -2,6 +2,7 @@
 session_start();
 include_once('../../Model/quanlydangky.php');
 include_once('../../Controller/cdangky.php');
+include("header1.php"); 
 ?>
 <!doctype html>
 <html lang="en">
