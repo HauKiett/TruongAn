@@ -92,15 +92,15 @@ if (isset($_POST["btDangnhap"])) {
                     <img src="../User/assets/img/logo/logo.png" alt="Vico Admin" height="100px" />
                 </a>
                 <div class="login-welcome">
-                    Chào mừng trở lại<br />Vui lòng đăng nhập nếu bạn có tài khoản admin
+                    Chào mừng bạn trở lại<br />Vui lòng đăng nhập tài khoản!
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Username</label>
+                    <label class="form-label">Tên tài khoản</label>
                     <input type="text" class="form-control" name="username">
                 </div>
                 <div class="mb-3">
                     <div class="d-flex justify-content-between">
-                        <label class="form-label">Password</label>
+                        <label class="form-label">Mật khẩu</label>
                         <a href="laylaimk.php" class="btn-link ml-auto">Quên mật khẩu?</a>
                     </div>
                     <input type="password" class="form-control" name="password">

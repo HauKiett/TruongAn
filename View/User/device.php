@@ -61,6 +61,71 @@ $obj = new connect_database();
         font-size: 16px;
         border-radius: 6px;
     }
+    /* Danh mục loại sản phẩm */
+/* Danh mục loại sản phẩm */
+/* Nền của toàn bộ thanh danh mục */
+/* Nền của toàn bộ thanh danh mục */
+.category-list {
+    background-color: #80bfff; /* Màu nền xanh nhạt cho thanh danh mục */
+    padding: 20px 0;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+/* Màu nền của mỗi mục danh mục */
+.category-item {
+    display: block;
+    padding: 12px;
+    background-color: #ffffff; /* Màu nền trắng cho các mục danh mục */
+    color: #333;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Căn chỉnh tên danh mục đầu tiên cách bên trái */
+.category-list .category-item:first-child {
+    margin-left: 20px; /* Căn lề cho mục danh mục đầu tiên */
+}
+
+.category-item:hover {
+    background-color: #007bff; /* Khi hover, chuyển thành màu xanh đậm của header */
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.category-item:active {
+    transform: translateY(0);
+}
+
+.category-item:focus {
+    outline: none;
+}
+
+.category-list .col-lg-2, .category-list .col-md-3, .category-list .col-sm-4 {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.category-list .col-lg-2 {
+    max-width: 150px;
+}
+
+.category-list .col-md-3 {
+    max-width: 120px;
+}
+
+.category-list .col-sm-4 {
+    max-width: 120px;
+}
+
+
+
 </style>
 
 </head>
@@ -80,12 +145,32 @@ $obj = new connect_database();
                         </div>
                     </div>
                 </div>
+                <div class="category-list mb-4">
+                <div class="row">
+                    <?php
+                    // Lấy danh sách loại sản phẩm từ cơ sở dữ liệu
+                    $loaisp=$objjj->xuatdulieu("select * from loaisp"); // goi phuong thuc  xuat du lieu
+                    if($loaisp) {
+                        for($i=0;$i<count($loaisp);$i++) {
+                            echo '
+                            <div class="col-lg-2 col-md-3 col-sm-4 mb-3">
+                                <a href="device.php?idloaisp=' . $loaisp[$i]['idloaisp'] . '" class="category-item">
+                                    ' . $loaisp[$i]['tenloaisp'] . '
+                                </a>
+                            </div>';
+                        }
+                    } else {
+                        echo "<p>Không có loại sản phẩm nào</p>";
+                    }
+                    ?>
+                </div>
+            </div>
 
-                    <!-- Block 1 -->
                     <?php
                     $idloaisp = $_REQUEST['idloaisp'];
                     if ($idloaisp)
                         $sql = "SELECT * FROM thietbi WHERE idloaisp='$idloaisp'";
+                    
                     else
                         $sql = "SELECT * FROM thietbi";
                     $sanpham = $obj->xuatdulieu($sql);
