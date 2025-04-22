@@ -64,27 +64,16 @@ include_once('header.php');
 
 <body>
 
-	<!-- Loading wrapper start -->
-	<!-- <div id="loading-wrapper">
-			<div class="spinner">
-                <div class="line1"></div>
-				<div class="line2"></div>
-				<div class="line3"></div>
-				<div class="line4"></div>
-				<div class="line5"></div>
-				<div class="line6"></div>
-            </div>
-		</div> -->
 	<div class="page-wrapper">
 		<div class="main-container">
 			<!-- Content wrapper scroll start -->
 			<div class="content-wrapper-scroll">
-
+							<h4>Khách hàng</h4>
 				<!-- Content wrapper start -->
 				<div class="content-wrapper">
 					<?php
-
-include_once('../../Model/xuatdulieu.php');
+					error_reporting(1);
+					include_once('../../Model/xuatdulieu.php');
 					$obj = new database();
 
 					$thanhvien = $obj->danhsachthanhvien();
@@ -173,7 +162,7 @@ include_once('../../Model/xuatdulieu.php');
 												<td><?= $item["GioiTinh"] ?></td>
 												<td>
 													<button
-														onclick="return confirm('Bạn có chắc chắn muốn xóa danh mục này không?')"
+														onclick="return confirm('Bạn có chắc chắn muốn xóa thành viên này không?')"
 														type="submit" name="btXoa" value="<?= $item["MaTV"] ?>"
 														class="btn btn-outline-danger">Xóa</button>
 <!-- sửa -->
@@ -211,8 +200,8 @@ include_once('../../Model/xuatdulieu.php');
                     <div class="mb-3">
                         <label for="editTenTV" class="form-label">Tên Thành viên</label>
                         <input type="text" class="form-control" name="TenTV" id="editTenTV" 
-                               pattern="^[^\d]+$" 
-                               title="Họ tên không được chứa số." 
+                               pattern="^[a-zA-Zàáạảãăắằặẳẵâấầậẩẫđèéẹẻẽêếềệểễìíịỉĩòóọỏõôốồộổỗơớờợởỡùúụủũưứừựửữỳýỵỷỹđ\s]+$" 
+           title="Họ tên không được chứa số. Chỉ cho phép ký tự tiếng Việt và khoảng trắng."
                                required>
                     </div>
                     <div class="mb-3">
@@ -282,8 +271,8 @@ include_once('../../Model/xuatdulieu.php');
            class="form-control" 
            name="TenTV1" 
            id="addTenTV" 
-           pattern="[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơĂẸẸ́ƠỦỦĂỲỴÝỳỵỷỹ\s]+" 
-           title="Họ tên chỉ được chứa chữ cái và khoảng trắng." 
+           pattern="^[a-zA-Zàáạảãăắằặẳẵâấầậẩẫđèéẹẻẽêếềệểễìíịỉĩòóọỏõôốồộổỗơớờợởỡùúụủũưứừựửữỳýỵỷỹđ\s]+$" 
+           title="Họ tên không được chứa số. Chỉ cho phép ký tự tiếng Việt và khoảng trắng."
            required>
 </div>
 
@@ -414,13 +403,13 @@ include_once('../../Model/xuatdulieu.php');
         email = document.getElementById("editEmailTV").value.trim();
     }
 
-    const namePattern = /^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơĂẸẸ́ƠỦỦĂỲỴÝỳỵỷỹ\s]+$/; // Không chứa số
+    const namePattern = /^[a-zA-Zàáạảãăắằặẳẵâấầậẩẫđèéẹẻẽêếềệểễìíịỉĩòóọỏõôốồộổỗơớờợởỡùúụủũưứừựửữỳýỵỷỹđ\s]+$/; // Không chứa số
     const phonePattern = /^\d{10,11}$/; // 10-11 chữ số
     const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/; // Định dạng email @gmail.com
 
     // Kiểm tra tên
     if (!namePattern.test(name)) {
-        alert("Họ tên chỉ được chứa chữ cái và khoảng trắng.");
+        alert("Họ tên không được chứa số. Chỉ cho phép ký tự tiếng Việt và khoảng trắng.");
         return false;
     }
     // Kiểm tra số điện thoại
