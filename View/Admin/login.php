@@ -89,7 +89,7 @@ if (isset($_POST["btDangnhap"])) {
         <div class="login-box">
             <div class="login-form">
                 <a href="index.php" class="login-logo">
-                    <img src="../User/assets/img/logo/logo.png" alt="Vico Admin" height="100px" />
+                    <img src="../Admin/assets/img_TruongAn/logo.webp" alt="Vico Admin" height="50px" weight="200px" />
                 </a>
                 <div class="login-welcome">
                     Chào mừng bạn trở lại<br />Vui lòng đăng nhập tài khoản!
@@ -101,7 +101,6 @@ if (isset($_POST["btDangnhap"])) {
                 <div class="mb-3">
                     <div class="d-flex justify-content-between">
                         <label class="form-label">Mật khẩu</label>
-                        <a href="laylaimk.php" class="btn-link ml-auto">Quên mật khẩu?</a>
                     </div>
                     <input type="password" class="form-control" name="password">
                 </div>

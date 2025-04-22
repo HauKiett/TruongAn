@@ -64,8 +64,8 @@ include_once('header.php');
                 <label class="form-label d-flex">Tình trạng sản phẩm</label>
 					<select name="tinhtrang" class="select-single js-states form-control" title="Select Product Category" data-live-search="true">
 						<option value="">--Chọn tình trạng--</option>
-						<option value="1">Bình thường</option>
-						<option value="2">Bảo trì</option>
+						<option value="1">Còn hàng</option>
+						<option value="2">Hết</option>
 					</select >
                 </div>
                 <div class="input-group mb-3">

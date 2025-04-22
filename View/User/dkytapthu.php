@@ -1,8 +1,13 @@
 <?php
+error_reporting(1);
 session_start();
+if (!$_SESSION["dangnhapKH"])
+header("Location:dangky.php");
+
 include_once('../../model/quanlytapthu.php');
 include_once('../../Controller/cdkytapthu.php');
-include("header1.php"); 
+include("header.php"); 
+
 
 $tensp = isset($_GET['tensp']) ? $_GET['tensp'] : '';
 $gia = isset($_GET['gia']) ? $_GET['gia'] : '';
@@ -165,7 +170,8 @@ $soluong = isset($_GET['soluong']) ? $_GET['soluong'] : '';
         <script>
         function cancelForm() {
             document.getElementById("registrationForm").reset();
-            alert("Đã hủy đăng ký");
+            alert("Đã hủy");
+            window.location='device.php';
         }
         function tangGiamSL(amount) {
             const soluongInput = document.getElementById("soluong");

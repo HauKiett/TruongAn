@@ -38,7 +38,7 @@
 									    <td> 
                                             <a href="../../View/Admin/updateDevice.php?id='.$idtb.'" class="btn btn-outline-success h-100">Sửa</a>
                                             <button type="submit" value='.$idtb.'  name="nutXoa" class="btn btn-outline-danger" onclick="return confirmDelete()">Xóa</button>
-                                            <a href="../../View/Admin/formghinhan.php?id='.$idtb.'" class="btn btn-outline-dark h-100">Ghi nhận tình trạng</a>
+
                                         </td>
                                     </form>
 								</tr>
