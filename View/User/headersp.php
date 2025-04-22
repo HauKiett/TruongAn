@@ -70,6 +70,19 @@
                         <!-- Main-menu -->
 
 
+                        <!-- Loại sản phẩm -->
+                        <?php
+                            $loaisp=$objjj->xuatdulieu("select * from loaisp"); // goi phuong thuc  xuat du lieu
+                            if($loaisp)
+                            {
+                                for($i=0;$i<count($loaisp);$i++) // hien tat ca du lieu ra
+                                {
+                                    echo '<li><a href="device.php?idloaisp='.$loaisp[$i]['idloaisp'].'">'.$loaisp[$i]['tenloaisp'].'</a></li>'; // Chỗ này để thiết kế nút
+                                }
+                            }
+                            ?>
+
+                            
                         <?php
                         error_reporting(1);
                         

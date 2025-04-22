@@ -79,12 +79,12 @@ include_once('header.php');
 		<div class="main-container">
 			<!-- Content wrapper scroll start -->
 			<div class="content-wrapper-scroll">
-
+							<h4>Khách hàng</h4>
 				<!-- Content wrapper start -->
 				<div class="content-wrapper">
 					<?php
 
-include_once('../../Model/xuatdulieu.php');
+					include_once('../../Model/xuatdulieu.php');
 					$obj = new database();
 
 					$thanhvien = $obj->danhsachthanhvien();

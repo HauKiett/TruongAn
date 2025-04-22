@@ -23,7 +23,7 @@
     <div class="toggle-sidebar" id="toggle-sidebar"><i class="bi bi-list"></i></div>
 
     <!-- Breadcrumb start -->
-    <ol class="breadcrumb d-md-flex d-none">
+    <!-- <ol class="breadcrumb d-md-flex d-none">
         <li class="breadcrumb-item">
             <i class="bi bi-house"></i>
             <a href="index.php">Home</a>
@@ -32,7 +32,7 @@
  
 
 
-    </ol>
+    </ol> -->
     <!-- Breadcrumb end -->
 
     <!-- Header actions ccontainer start -->
@@ -43,14 +43,15 @@
         <div class="search-container">
 
             <!-- Search input group start -->
-            <div class="input-group">
+            <!-- Tìm kiếm -->
+            <!-- <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search anything">
                 <button class="btn" type="button">
                     <i class="bi bi-search"></i>
 
                 </button>
                 
-            </div>
+            </div> -->
             <!-- Search input group end -->
 
         </div>
@@ -74,9 +75,9 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userSettings">
                     <div class="header-profile-actions">
-                        <a href="profile.html">Profile</a>
-                        <a href="account-settings.html">Settings</a>
-                        <a href="#" onclick="confirmLogout()">Logout</a>
+                        <a href="profile.html">Thông tin</a>
+                        <a href="account-settings.html">Cài đặt</a>
+                        <a href="#" onclick="confirmLogout()">Đăng xuất</a>
 
                         <script>
                         function confirmLogout() {

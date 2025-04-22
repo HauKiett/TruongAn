@@ -40,6 +40,8 @@ session_start();
 		<div class="page-wrapper">
 			<div class="main-container">
                 <div class="row" style="margin-left: 10px;">
+				
+							<h4>Danh sách sản phẩm</h4>
 								<div class="text-end mb-3">
                 						<a href="../Admin/addDevice.php" class="btn btn-primary">
                     						<i class="bi bi-plus-circle"></i>Thêm sản phẩm

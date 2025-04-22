@@ -69,7 +69,7 @@ include_once('header.php');
 														<th>Mã Phản Hồi</th>
 														<th>Nội Dung</th>
 														<th>Trạng Thái</th>
-														<th>Thành Viên Phản Hồi</th>
+														<th>Khách Hàng Phản Hồi</th>
 														<th>Ngày Phản Hồi</th>
 													</tr>
 												</thead>
@@ -112,7 +112,7 @@ include_once('header.php');
                                                             <th>Mã Phản Hồi</th>
                                                             <th>Nội Dung</th>
                                                             <th>Trạng Thái</th>
-                                                            <th>Thành Viên Phản Hồi</th>
+                                                            <th>Khách Hàng Phản Hồi</th>
                                                             <th>Ngày Phản Hồi</th>
                                                         </tr>
                                                     </thead>

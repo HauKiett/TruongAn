@@ -43,17 +43,17 @@
                             <li>
                                 <a href="device.php">Danh sách sản phẩm</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="DStinhtrangTB.php">Danh sách ghi nhận</a>
                             </li>
 
                             <li>
                                 <a href="baotriTB.php">Danh sách bảo trì</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </li>
-                <li class="sidebar-dropdown">
+                <!-- <li class="sidebar-dropdown">
                     <a href="goitap.php">
                         <i class="bi bi-box"></i>
                         <span class="menu-text">Quản lí gói tập</span>
@@ -68,8 +68,8 @@
                             </li>
                         </ul>
                     </div>
-                </li>
-                <li class="sidebar-dropdown">
+                </li> -->
+                <!-- <li class="sidebar-dropdown">
                     <a href="discount.php">
                         <i class="bi bi-gift"></i>
                         <span class="menu-text">Quản lí khuyến mãi</span>
@@ -84,8 +84,8 @@
                             </li>
                         </ul>
                     </div>
-                </li>
-                <li class="sidebar-dropdown">
+                </li> -->
+                <!-- <li class="sidebar-dropdown">
                     <a href="#">
                         <i class="bi bi-calendar-check"></i>
                         <span class="menu-text">Thời gian tập luyên</span>
@@ -101,7 +101,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> -->
                 
                 <li class="sidebar-dropdown">
                     <a href="#">
