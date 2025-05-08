@@ -13,6 +13,7 @@
 								<th>Tên sản phẩm</th>
                                 <th>Giá</th>
 								<th>Tình trạng</th>
+                                <th>Số lượng</th>
 								<th>Hình ảnh</th>
                                 <th>Tùy Chỉnh</th>
 							</tr>
@@ -23,6 +24,7 @@
                         $tenTB = $row['TenTB'];
                         $gia = $row['gia'];
                         $tingtrang = $row['TinhTrangTB'];
+                        $soluong = $row['soLuong'];
                         $hinh = $row['Hinhanh'];
                         echo '
                             <tbody>
@@ -31,6 +33,7 @@
 									<td style="padding-top: 18px;">'.$tenTB.'</td>
                                     <td style="padding-top: 18px;">'.$gia.'</td>
 									<td style="padding-top: 18px;">'.$tingtrang.'</td>
+                                    <td style="padding-top: 18px;">'.$soluong.'</td>
 									<td>
 	                                    <img src="./assets/img/device/'.$hinh.'" alt="" width="50px" height="50px">
                                     </td>

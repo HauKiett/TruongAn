@@ -9,6 +9,7 @@ $p = new deviceQL();
             $name = $_FILES['myfile']['name'];
             $tmp_name = $_FILES['myfile']['tmp_name'];
             $gia=$_POST["gia"];
+            $donvitinh = $_POST["donvitinh"];
             $folder = "./assets/img/device/";
  
             
@@ -32,8 +33,8 @@ $p = new deviceQL();
                     $name = time() . '_' . $name;
                     if ($p->uploadfile($name, $tmp_name, $folder)) {
                         // Chuẩn bị câu lệnh SQL để thêm vào cơ sở dữ liệu
-                        $sql = "INSERT INTO thietbi (TenTB, idloaisp, TinhTrangTB, Hinhanh, gia) 
-                                VALUES ('$tenTB', '$idloaisp', '$tingtrang_names', '$name','$gia')";
+                        $sql = "INSERT INTO thietbi (TenTB, donvitinh, idloaisp, TinhTrangTB, Hinhanh, gia) 
+                                VALUES ('$tenTB','$donvitinh' , '$idloaisp', '$tingtrang_names', '$name','$gia')";
         
                         // Thực thi câu lệnh SQL
                         if ($p->themthietbi($sql)) {
@@ -47,7 +48,53 @@ $p = new deviceQL();
                 }
             }
         }
-        
+
+
+        if (isset($_POST["Nhập"])) {
+            // Lấy dữ liệu từ form
+            $ngay = $_POST['ngay_nhap'];
+            $nguoi = $_POST['nguoi_nhap'];
+            $MaTB = $_POST['MaTB'];
+            $so_luong = (int)$_POST['so_luong'];
+            $sql = "INSERT INTO phieunhap  (NgayNhap, NguoiNhap, MaTB, soLuong) 
+                    VALUES ('$ngay', '$nguoi', '$MaTB', '$so_luong')";
+                        if ($p->nhapkho($sql)) {
+                            $sqll ="UPDATE thietbi SET soLuong = soLuong + $so_luong WHERE MaTB = $MaTB";
+                            if ($p->updatenhapkho($sqll)){
+                                echo "<script>alert('Nhập kho thành công!'); window.location='device.php';</script>";
+                        } 
+                            else {
+                                echo "<script>alert('Lỗi cập nhật số lượng thiết bị!');</script>";
+                        }
+                    }
+                        else {
+                            echo "<script>alert('Lỗi thêm phiếu nhập!');</script>";
+                        }
+                    
+                }
+                if (isset($_POST["Xuất"])) {
+                    // Lấy dữ liệu từ form
+                    $ngay = $_POST['ngay_xuat'];
+                    $nguoi = $_POST['nguoi_xuat'];
+                    $MaTB = $_POST['MaTB'];
+                    $so_luong = (int)$_POST['so_luong'];
+                    $sql = "INSERT INTO phieuxuat (NgayXuat, NguoiXuat, MaTB, soLuong) 
+                            VALUES ('$ngay', '$nguoi', '$MaTB', '$so_luong')";
+                                if ($p->xuatkho($sql)) {
+                                    $sqll ="UPDATE thietbi SET soLuong = soLuong - $so_luong WHERE MaTB = $MaTB";
+                                    if ($p->updatexuatkho($sqll)){
+                                        echo "<script>alert('Xuất kho thành công!'); window.location='device.php';</script>";
+                                } 
+                                    else {
+                                        echo "<script>alert('Lỗi cập nhật số lượng thiết bị!');</script>";
+                                }
+                            }
+                                else {
+                                    echo "<script>alert('Lỗi thêm phiếu xuất!');</script>";
+                                }
+                            
+                        }
+
 
         if (isset($_POST["nutXoa"])) {
             $idTB = $_POST['nutXoa'];

@@ -5,6 +5,23 @@ class deviceQL extends connect_database{
     {
         return $this->tuychinh($sql);
     }
+    public function nhapkho($sql)
+    {
+        return $this->tuychinh($sql);
+    }
+    public function updatenhapkho($sqll)
+    {
+        return $this->tuychinh($sqll);
+    }
+    public function xuatkho($sql)
+    {
+        return $this->tuychinh($sql);
+    }
+    public function updatexuatkho($sqll)
+    {
+        return $this->tuychinh($sqll);
+    }
+    
     public function uploadfile($name, $tmp_name, $folder){
         // Đảm bảo thư mục đích tồn tại, nếu không thì tạo
         if (!is_dir($folder)) {
@@ -48,6 +65,20 @@ class deviceQL extends connect_database{
                 $str.='<option selected value="'.$arr[$i]["idloaisp"].'">'.$arr[$i]["tenloaisp"].'</option>';
             else
             $str.='<option value="'.$arr[$i]["idloaisp"].'">'.$arr[$i]["tenloaisp"].'</option>';
+        }
+        return $str;
+    }
+    public function selectthietbi($value='')
+    {
+        $str='';
+        $sql="select * from thietbi";
+        $arr=$this->xuatdulieu($sql);
+        for($i=0;$i<count($arr);$i++)
+        {
+            if($arr[$i]["MaTB"]==$value)
+                $str.='<option selected value="'.$arr[$i]["MaTB"].'">'.$arr[$i]["TenTB"].'</option>';
+            else
+            $str.='<option value="'.$arr[$i]["MaTB"].'">'.$arr[$i]["TenTB"].'</option>';
         }
         return $str;
     }

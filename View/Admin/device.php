@@ -43,6 +43,13 @@ session_start();
 				
 							<h4>Danh sách sản phẩm</h4>
 								<div class="text-end mb-3">
+
+										<a href="../Admin/nhapkho.php" class="btn btn-primary">
+											<i class="bi bi-plus-circle"></i>Nhập kho
+                						</a>
+										<a href="../Admin/xuatkho.php" class="btn btn-primary">
+											<i class="bi bi-dash-circle"></i>Xuất kho
+                						</a>
                 						<a href="../Admin/addDevice.php" class="btn btn-primary">
                     						<i class="bi bi-plus-circle"></i>Thêm sản phẩm
                 						</a>
