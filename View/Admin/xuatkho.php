@@ -43,42 +43,30 @@ include_once('header.php');
 
     <div class="page-wrapper">
         <div class="main-container">
-            <h3 class="text-center mb-4">Thêm sản phẩm</h3>
-            <form method="post" class="shadow p-4 rounded bg-light" enctype="multipart/form-data" style="margin-left: 20px;">
+            <h3 class="text-center mb-4">Xuất kho</h3>
+            <form method="POST" class="shadow p-4 rounded bg-light" enctype="multipart/form-data" style="margin-left: 20px;">
                 <div class="mb-3">
-                    <label for="" class="form-label">Tên sản phẩm</label>
-                    <input type="text" class="form-control" name="tenTB"/>
+                    <label for="" class="form-label">Ngày xuất:</label>
+                    <input type="date" class="form-control" name="ngay_xuat"/>
                 </div>
                 <div class="mb-3">
-					<label class="form-label d-flex">Loại sản phẩm</label>
-					<select name="idloaisp" class="select-single js-states form-control" title="Select Product Category" data-live-search="true">
-						<option value="">--Chọn loại sản phẩm--</option>
-						<?php echo $obj->selectloaisp(); ?>
+                    <label for="" class="form-label">Người xuất:</label>
+                    <input type="text" class="form-control" name="nguoi_xuat"/>
+                </div>
+                <div class="mb-3">
+					<label class="form-label d-flex">Sản phẩm</label>
+					<select name="MaTB" class="select-single js-states form-control" title="Select Product Category" data-live-search="true">
+						<option value="">--Chọn sản phẩm--</option>
+						<?php echo $obj->selectthietbi(); ?>
 					</select>
 				</div>
-                <div class="mb-3">
-                    <label for="" class="form-label">Giá</label>
-                    <input type="text" class="form-control" name="gia"/>
-                </div>
                 <div class="mb-4">
-                <label class="form-label d-flex">Tình trạng sản phẩm</label>
-					<select name="tinhtrang" class="select-single js-states form-control" title="Select Product Category" data-live-search="true">
-						<option value="">--Chọn tình trạng--</option>
-						<option value="1">Còn hàng</option>
-						<option value="2">Hết</option>
-					</select >
+                    <label for="" class="form-label">Số lượng xuất:</label>
+                    <input type="number" class="form-control" name="so_luong" min="1"/>
                 </div>
-                <div class="mb-3">
-                    <label for="" class="form-label">Đơn vị tính</label>
-                    <input type="text" class="form-control" name="donvitinh"/>
-                </div>
-                <div class="input-group mb-3">
-					<label class="input-group-text" for="inputGroupFile01">Hình ảnh</label>
-					<input type="file" class="form-control" id="inputGroupFile01" name="myfile">
-				</div>
                 <div class="text-end">
-                    <button type="submit" name="Thêm" class="btn btn-primary">
-                        <i class="bi bi-plus-circle"></i>Thêm
+                    <button type="submit" name="Xuất" class="btn btn-primary">
+                        <i class="bi bi-plus-circle"></i>Xuất kho
                     </button>
                 </div>
             </form>

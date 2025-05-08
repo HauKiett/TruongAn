@@ -21,7 +21,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Gym trainer | Template </title>
+    <title>Trường An </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
@@ -43,8 +43,53 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/themify-icons-font/themify-icons/themify-icons.css">
 
-</head>
 
+
+    <style>
+ /* Nút Đăng Nhập và Đăng Ký */
+.header-btns .btn {
+    background-color:#ff8213; /* Màu nền xanh lá cây nhạt */
+    color: white; /* Màu chữ trắng */
+    padding: 23px 20px; /* Thêm khoảng cách xung quanh chữ */
+    border-radius: 15px; /* Bo góc nhẹ cho nút */
+    font-size: 16px; /* Kích thước chữ */
+    font-weight: 600; /* Chữ đậm */
+    border: none; /* Xóa viền */
+    transition: all 0.3s ease; /* Hiệu ứng chuyển đổi */
+    margin-right: 10px; /* Khoảng cách giữa các nút */
+}
+
+/* Hiệu ứng hover */
+.header-btns .btn:hover {
+    background-color: #45a049; /* Màu nền khi hover (xanh đậm hơn một chút) */
+    transform: translateY(-3px); /* Đẩy nút lên một chút */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ */
+}
+
+/* Hiệu ứng khi nút đang được nhấn */
+.header-btns .btn:active {
+    transform: translateY(1px); /* Đẩy nút xuống một chút khi nhấn */
+    box-shadow: none; /* Xóa bóng đổ khi nhấn */
+}
+
+/* Đảm bảo các nút nằm sát lề bên trái */
+.header-btns {
+    display: flex;
+    justify-content: flex-start; /* Căn lề trái */
+    align-items: center;
+}
+
+/* Điều chỉnh kích thước nút cho màn hình nhỏ */
+@media (max-width: 768px) {
+    .header-btns .btn {
+        font-size: 14px; /* Chữ nhỏ lại một chút trên màn hình nhỏ */
+        padding: 8px 15px; /* Khoảng cách xung quanh nhỏ lại */
+    }
+}
+
+
+</style>
+</head>
 <body class="black-bg">
 <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -154,10 +199,8 @@ if ($_SESSION["dangnhapKH"]){
                             </nav>
                         </div>
                         <!-- Header-btn -->
-                        <div class="header-btns d-none d-lg-block f-right">
+                        <div class="header-btns d-none d-lg-block f-left">
                             <a href="login.php" class="btn">Đăng Nhập</a>
-                        </div>
-                        <div class="header-btns d-none d-lg-block f-right">
                             <a href="dangky.php" class="btn">Đăng Kí</a>
                         </div>
                         <!-- Mobile Menu -->

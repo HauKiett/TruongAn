@@ -2,7 +2,7 @@
 include_once('../../model/quanlyhoadon.php');
 $obj = new hoadon();
 if (isset($_POST["btXoaHD"])) {
-    $maph = $_POST["btXoaHD"];
+    $id = $_POST["btXoaHD"];
     if ($obj->xoahoadon($id)) {
         echo "<script>alert('Xóa hóa đơn thành công!');</script>";
     } else {

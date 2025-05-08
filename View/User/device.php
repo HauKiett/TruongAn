@@ -189,7 +189,7 @@ $obj = new connect_database();
                                         </li>
                                         <li class="mb-2">Giá: ' . number_format($sp["gia"]) . ' VNĐ</li>
                                         <li>
-                                            <a href="dkytapthu.php?tensp=' . urlencode($sp["TenTB"]) . '&gia=' . $sp["gia"] . '&soluong=1" class="btn btn-primary btn-order w-100">Đặt hàng</a>
+                                            <a href="dkytapthu.php?tensp=' .urlencode($sp["TenTB"]).'&gia='.$sp["gia"].'&soluong=1" class="btn btn-primary btn-order w-100">Đặt hàng</a>
                                         </li>
                                     </ul>
                                 </div>

@@ -80,8 +80,8 @@ include('header.php');
                         <div class="mb-4">
                             <label class="form-label d-flex">Tình trạng sản phẩm</label>
                             <select name="tinhtrang" class="select-single js-states form-control">
-                                <option value="1" <?php if ($tingtrang == 1) echo 'selected'; ?>>Bình thường</option>
-                                <option value="2" <?php if ($tingtrang == 2) echo 'selected'; ?>>Bảo trì</option>
+                                <option value="1" <?php if ($tingtrang == 1) echo 'selected'; ?>>Còn hàng</option>
+                                <option value="2" <?php if ($tingtrang == 2) echo 'selected'; ?>>Hết</option>
                             </select>
                         </div>
     

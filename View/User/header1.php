@@ -21,7 +21,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Gym trainer | Template </title>
+    <title>Trường An </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
@@ -45,9 +45,9 @@
 <style>
  /* Nút Đăng Nhập và Đăng Ký */
 .header-btns .btn {
-    background-color: #4CAF50; /* Màu nền xanh lá cây nhạt */
+    background-color:#ff8213; /* Màu nền xanh lá cây nhạt */
     color: white; /* Màu chữ trắng */
-    padding: 10px 20px; /* Thêm khoảng cách xung quanh chữ */
+    padding: 23px 20px; /* Thêm khoảng cách xung quanh chữ */
     border-radius: 15px; /* Bo góc nhẹ cho nút */
     font-size: 16px; /* Kích thước chữ */
     font-weight: 600; /* Chữ đậm */
@@ -194,9 +194,9 @@ if ($_SESSION["dangnhapKH"]){
                         </div>
                         <!-- Header-btn -->
                         <div class="header-btns d-none d-lg-block f-left">
-    <a href="login.php" class="btn">Đăng Nhập</a>
-    <a href="dangky.php" class="btn">Đăng Kí</a>
-</div>
+                            <a href="login.php" class="btn">Đăng Nhập</a>
+                            <a href="dangky.php" class="btn">Đăng Kí</a>
+                        </div>
                         <!-- Mobile Menu -->
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>

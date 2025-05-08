@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["dkytap"])) {
             // Gộp nội dung đơn hàng để gửi email
             $noidung_email .= "- $tensp | SL: $soluong | Giá: " . number_format($gia) . " đ<br>";
         }
-        echo "<script>alert('Đặt hàng thành công!'); window.location='thanhtoan.php';</script>";
+        echo "<script>alert('Đặt hàng thành công!'); window.location='device.php';</script>";
 
         if ($ok_all) {
             // Gửi email
