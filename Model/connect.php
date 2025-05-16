@@ -12,10 +12,39 @@ class connect_database
         else
         return $conn;
     }
+    public function truyvan($sql) {
+        $link = $this->connect();
+        $arr = array();
+        $result = $link->query($sql);
+        if ($result && $result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $arr[] = $row;
+            }
+            return $arr;
+        }
+        return [];
+    }
+
+    public function thuchien($sql) {
+        $link = $this->connect();
+        return $link->query($sql);
+    }
     public function dangnhaptaikhoan($username, $password)
     {
         //$password=md5($password);
         $sql = "SELECT * FROM taikhoan WHERE Username = '$username' AND Password = '$password'";
+        $link = $this->connect();
+        $result = $link->query($sql);
+        if ($result->num_rows) {
+            $row = $result->fetch_assoc();
+            return $row;
+        } else
+            return 0;
+    }
+    public function dangnhaptaikhoanNV($username, $password)
+    {
+        //$password=md5($password);
+        $sql = "SELECT * FROM taikhoannv WHERE UsernameNV = '$username' AND PasswordNV = '$password'";
         $link = $this->connect();
         $result = $link->query($sql);
         if ($result->num_rows) {

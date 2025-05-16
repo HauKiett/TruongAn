@@ -1,25 +1,32 @@
 <!-- Page header starts -->
 <div class="page-header">
 <?php
-            
-            include_once('../../Model/xuatdulieu.php');
-            $objjj = new database();
-            
-            
-            if (isset($_SESSION['ten'])) {
-                $emailll = $_SESSION['ten']; // Lấy giá trị từ session
-                $emailll = trim($emailll);
-            
-                // Câu truy vấn với giá trị từ session
-              $sql = "SELECT taikhoan.Username, nhanvien.TenNV 
-        FROM taikhoan 
-        JOIN nhanvien ON taikhoan.Manv = nhanvien.Manv 
-        WHERE taikhoan.Username = '$emailll'";
+include_once('../../Model/xuatdulieu.php');
+$obj = new database();
+$tenNV = '';
 
-                $taikhoan = $objjj->danhsachtaikhoan($sql);
-            
-            }
-            ?>
+if (isset($_SESSION['ten']) && isset($_SESSION['loai_taikhoan'])) {
+    $email = trim($_SESSION['ten']);
+    $loai = $_SESSION['loai_taikhoan'];
+
+    if ($loai === 'admin') {
+        $sql = "SELECT nhanvien.TenNV 
+                FROM taikhoan 
+                JOIN nhanvien ON taikhoan.Manv = nhanvien.Manv 
+                WHERE taikhoan.Username = '$email'";
+        $kq = $obj->danhsachtaikhoan($sql);
+        if ($kq) $tenNV = $kq[0]['TenNV'];
+    }
+    elseif ($loai === 'nhanvien') {
+        $sql = "SELECT nhanvien.TenNV 
+                FROM taikhoanNV 
+                JOIN nhanvien ON taikhoanNV.Manv = nhanvien.Manv 
+                WHERE taikhoanNV.UsernameNV = '$email'";
+        $kq = $obj->danhsachtaikhoanNV($sql);
+        if ($kq) $tenNV = $kq[0]['TenNV'];
+    }
+}
+?>
     <div class="toggle-sidebar" id="toggle-sidebar"><i class="bi bi-list"></i></div>
 
     <!-- Breadcrumb start -->
@@ -65,9 +72,9 @@
 
             <li class="dropdown">
                 <a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
-                    <span class="user-name d-none d-md-block">       <?php
-    echo htmlspecialchars($taikhoan[0]["TenNV"], ENT_QUOTES, 'UTF-8');
-?>  </span>
+                    <span class="user-name d-none d-md-block">      
+                    <?php echo htmlspecialchars($tenNV, ENT_QUOTES, 'UTF-8'); ?>
+                    
                     <span class="avatar">
                         <img src="assets/img_TruongAn/avatar/avatar.png" alt="Admin Templates">
                         <span class="status online"></span>

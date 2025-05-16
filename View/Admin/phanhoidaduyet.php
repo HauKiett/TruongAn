@@ -2,7 +2,16 @@
 $idSua = 1;
 include('sidebar.php');
 include_once('header.php');
+if (isset($_SESSION['loai_taikhoan']) && $_SESSION['loai_taikhoan'] === 'nhanvien') {
+    // Nếu là nhân viên, chỉ cho phép vào file thêm sản phẩm
+    $filename = basename(__FILE__);
 
+    if ($filename !== 'addDevice.php') {
+        // Không phải trang thêm sản phẩm thì báo lỗi hoặc không xuất dữ liệu
+        echo "<script>alert('Bạn không có quyền truy cập chức năng này.'); window.history.back();</script>";
+        exit;
+    }
+}
 ?>
 <!doctype html>
 <html lang="en">

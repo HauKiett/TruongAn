@@ -43,65 +43,9 @@
                             <li>
                                 <a href="device.php">Danh sách sản phẩm</a>
                             </li>
-                            <!-- <li>
-                                <a href="DStinhtrangTB.php">Danh sách ghi nhận</a>
-                            </li>
-
-                            <li>
-                                <a href="baotriTB.php">Danh sách bảo trì</a>
-                            </li> -->
                         </ul>
                     </div>
                 </li>
-                <!-- <li class="sidebar-dropdown">
-                    <a href="goitap.php">
-                        <i class="bi bi-box"></i>
-                        <span class="menu-text">Quản lí gói tập</span>
-                    </a>
-                    <div class="sidebar-submenu">
-                        <ul>
-                            <li>
-                                <a href="#">1</a>
-                            </li>
-                            <li>
-                                <a href="#">2</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li> -->
-                <!-- <li class="sidebar-dropdown">
-                    <a href="discount.php">
-                        <i class="bi bi-gift"></i>
-                        <span class="menu-text">Quản lí khuyến mãi</span>
-                    </a>
-                    <div class="sidebar-submenu">
-                        <ul>
-                            <li>
-                                <a href="#">1</a>
-                            </li>
-                            <li>
-                                <a href="#">2</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li> -->
-                <!-- <li class="sidebar-dropdown">
-                    <a href="#">
-                        <i class="bi bi-calendar-check"></i>
-                        <span class="menu-text">Thời gian tập luyên</span>
-                    </a>
-                    <div class="sidebar-submenu">
-                        <ul>
-                        <li>
-                                <a href="nhacnhoditap.php">Thông báo nhắc nhở</a>
-                            </li>
-
-                            <li>
-                                <a href="theodoitapluyen.php">Theo dõi tập luyện</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li> -->
                 
                 <li class="sidebar-dropdown">
                     <a href="#">

@@ -50,12 +50,12 @@ $p = new deviceQL();
         }
 
 
-        if (isset($_POST["Nhập"])) {
+        if (isset($_POST["nhapkho"])) {
             // Lấy dữ liệu từ form
             $ngay = $_POST['ngay_nhap'];
             $nguoi = $_POST['nguoi_nhap'];
             $MaTB = $_POST['MaTB'];
-            $so_luong = (int)$_POST['so_luong'];
+            $so_luong = (int)$_POST['soluong'];
             $sql = "INSERT INTO phieunhap  (NgayNhap, NguoiNhap, MaTB, soLuong) 
                     VALUES ('$ngay', '$nguoi', '$MaTB', '$so_luong')";
                         if ($p->nhapkho($sql)) {
@@ -72,12 +72,12 @@ $p = new deviceQL();
                         }
                     
                 }
-                if (isset($_POST["Xuất"])) {
+                if (isset($_POST["xuatkho"])) {
                     // Lấy dữ liệu từ form
                     $ngay = $_POST['ngay_xuat'];
                     $nguoi = $_POST['nguoi_xuat'];
                     $MaTB = $_POST['MaTB'];
-                    $so_luong = (int)$_POST['so_luong'];
+                    $so_luong = (int)$_POST['soluong'];
                     $sql = "INSERT INTO phieuxuat (NgayXuat, NguoiXuat, MaTB, soLuong) 
                             VALUES ('$ngay', '$nguoi', '$MaTB', '$so_luong')";
                                 if ($p->xuatkho($sql)) {

@@ -11,15 +11,27 @@ if (isset($_POST["btDangnhap"])) {
     $password = $_POST["password"];
 
     $id_tk = $obj->dangnhaptaikhoan($email, $password);
+    $id_tkNV = $obj->dangnhaptaikhoanNV($email, $password);
 
     if ($id_tk) {
         echo "<script>
-            alert('Đăng nhập thành công!');
+            alert('Đăng nhập thành công bằng tài khoản quản trị!');
             window.location.href = 'index.php';
         </script>";
         $_SESSION['dangnhap'] = $id_tk;
         $_SESSION['ten']= $email;
-    } else {
+        $_SESSION['loai_taikhoan'] = 'admin';
+    } 
+    elseif ($id_tkNV) {
+        echo "<script>
+            alert('Đăng nhập thành công bằng tài khoản nhân viên!');
+            window.location.href = 'index.php';
+        </script>";
+        $_SESSION['dangnhap'] = $id_tkNV;
+        $_SESSION['ten']= $email;
+        $_SESSION['loai_taikhoan'] = 'nhanvien';
+    } 
+    else {
         echo "<script>
             alert('Đăng nhập không thành công! Vui lòng kiểm tra lại.');
             window.location.href = 'login.php';

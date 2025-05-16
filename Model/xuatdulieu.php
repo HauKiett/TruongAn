@@ -29,6 +29,13 @@ class database  extends connect_database{
         }
         return $this->xuatdulieu($sql);
     }
+    public function danhsachtaikhoanNV($sql = null)
+    {
+        if ($sql === null) {
+            $sql = "SELECT * FROM taikhoanNV";
+        }
+        return $this->xuatdulieu($sql);
+    }
     public function danhsachtaikhoanKH($sql = null)
     {
         if ($sql === null) {
