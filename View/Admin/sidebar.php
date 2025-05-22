@@ -46,6 +46,12 @@
                         </ul>
                     </div>
                 </li>
+                <li class="sidebar-dropdown">
+                    <a href="kho.php">
+                        <i class="bi bi-display"></i>
+                        <span class="menu-text">Quản lí kho</span>
+                    </a>
+                </li>
                 
                 <li class="sidebar-dropdown">
                     <a href="#">

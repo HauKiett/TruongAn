@@ -54,6 +54,41 @@
             }
         }
 
+        public function selectallnvl($sql){
+            $link = $this->connect();
+            $ketqua = mysqli_query($link, $sql);
+            $i = mysqli_num_rows($ketqua);
+            if($i>0){
+                echo '<table class="table m-0">
+						<thead>
+							<tr>
+								<th>STT</th>
+								<th>Tên</th>
+                                <th>Đơn vị</th>
+                                <th>Số lượng tồn</th>
+							</tr>
+						</thead>';
+                    $dem=1;
+                    while($row = mysqli_fetch_array($ketqua)){
+                        $tenTB = $row['ten'];
+                        $donvi = $row['donvi'];
+                        $soluong = $row['tonkho'];
+                        echo '
+                            <tbody>
+								<tr>
+									<td style="padding-top: 18px;">'.$dem.'</td>
+									<td style="padding-top: 18px;">'.$tenTB.'</td>
+                                    <td style="padding-top: 18px;">'.$donvi.'</td>
+                                    <td style="padding-top: 18px;">'.$soluong.'</td>
+								</tr>
+                            </tbody>';
+                        $dem++;
+                    }
+                    echo '</table>';
+            }else{
+                echo 'Đang cập nhật dữ liệu';
+            }
+        }
 
         public function selectdsghinhan($sql){
             $link = $this->connect();

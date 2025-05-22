@@ -43,8 +43,12 @@ session_start();
 				
 							<h4>Danh sách sản phẩm</h4>
 								<div class="text-end mb-3">
-                						<a href="../Admin/addDevice.php" class="btn btn-primary">
-                    						<i class="bi bi-plus-circle"></i>Thêm sản phẩm
+
+										<a href="add_phieu_nhap.php" class="btn btn-primary">
+											<i class="bi bi-plus-circle"></i>Nhập kho
+                						</a>
+										<a href="add_phieu_xuat.php" class="btn btn-primary">
+											<i class="bi bi-dash-circle"></i>Xuất kho
                 						</a>
             						</div>
 								<div class="col-12">
@@ -58,8 +62,8 @@ session_start();
 									</div> -->
 									
 									<?php
-										$sql= "select * from thietbi";
-										$p->selectalldevice($sql);
+										$sql= "select * from kho";
+										$p->selectallnvl($sql);
 									?>
 								</div>
 
