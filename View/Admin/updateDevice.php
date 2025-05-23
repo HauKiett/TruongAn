@@ -1,10 +1,8 @@
 <?php
-include_once('../../Model/Modeldevice.php');
-include_once('../../Controller/DeviceController.php');
-include('../../Controller/DeviceQL.php');
-$p = new device();
-$obj = new deviceQL();
 session_start();
+include_once('../../Model/Modeldevice.php');
+include('../../Controller/DeviceQL.php');
+$obj = new deviceQL();
 include('sidebar.php');
 include('header.php');
 ?>
@@ -44,11 +42,11 @@ include('header.php');
 <body>
 <?php
         $layid = $_GET['id'];
-        $layten = $p->xuatdulieu("SELECT TenTB FROM thietbi WHERE MaTB='$layid'");
-        $idloaisp = $p->xuatdulieu("SELECT idloaisp FROM thietbi WHERE MaTB='$layid' LIMIT 1");
-        $laytingtrang = $p->xuatdulieu("SELECT TinhtrangTB FROM thietbi WHERE MaTB='$layid' LIMIT 1");
-        $layhinhanh = $p->xuatdulieu("SELECT Hinhanh FROM thietbi WHERE MaTB='$layid' LIMIT 1");
-        $laygia = $p->xuatdulieu("SELECT gia FROM thietbi WHERE MaTB='$layid'");
+        $layten = $p->truyvan("SELECT TenTB FROM thietbi WHERE MaTB='$layid'");
+        $idloaisp = $p->truyvan("SELECT idloaisp FROM thietbi WHERE MaTB='$layid' LIMIT 1");
+        $laytingtrang = $p->truyvan("SELECT TinhtrangTB FROM thietbi WHERE MaTB='$layid' LIMIT 1");
+        $layhinhanh = $p->truyvan("SELECT Hinhanh FROM thietbi WHERE MaTB='$layid' LIMIT 1");
+        $laygia = $p->truyvan("SELECT gia FROM thietbi WHERE MaTB='$layid'");
         // Kiểm tra dữ liệu và gán giá trị
         $tenTB = !empty($layten) ? $layten[0]['TenTB'] : '';
         $idloaisp = !empty($idloaisp) ? $idloaisp[0]['idloaisp'] : '';
@@ -70,7 +68,12 @@ include('header.php');
                         <div class="mb-3">
                             <label class="form-label d-flex">Loại sản phẩm</label>
                             <select name="idloaisp" class="select-single js-states form-control">
-                            <?php echo $obj->selectloaisp(); ?>
+                           <?php
+                        $list = $obj->truyvan("SELECT * FROM loaisp");
+                        foreach ($list as $row) {
+                            echo "<option value='{$row['idloaisp']}'>{$row['tenloaisp']}</option>";
+                        }
+                        ?> 
                             </select>
                         </div>
                         <div class="mb-3">

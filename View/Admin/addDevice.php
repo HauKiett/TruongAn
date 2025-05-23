@@ -2,7 +2,6 @@
 session_start();
 include_once('../../Model/Modeldevice.php');
 include('../../Controller/DeviceQL.php');
-
 $obj = new deviceQL();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['Thêm'])) {

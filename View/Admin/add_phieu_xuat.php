@@ -88,6 +88,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt2 = $conn->prepare("INSERT INTO chitietphieuxuat (id_phieu, tensp, soluong, dongia) VALUES (?, ?, ?, ?)");
         $stmt2->bind_param("isii", $id_phieu, $ten, $sl, $dg);
         $stmt2->execute();
+
+        $check = $conn->query("SELECT id FROM kho WHERE ten = '$ten'");
+        if ($check->num_rows) {
+            $sp = $check->fetch_assoc();
+            $conn->query("UPDATE kho SET tonkho = tonkho - $sl WHERE id = {$sp['id']}");
+        } else {
+            $conn->query("INSERT INTO kho (ten, donvi, tonkho) VALUES ('$ten', 'cái', $sl)");
+        }
     }
 
     // In phiếu

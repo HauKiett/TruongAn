@@ -14,4 +14,14 @@ class hoadontt extends connect_database
         }
         return $this->xuatdulieu($sql);
     }
+        public function danhsachhoadontt_theongay($from, $to)
+    {
+        $from = $_POST["tungay"];
+        $to = $_POST["denngay"];
+        $sql = "SELECT * FROM khtapthu 
+                WHERE Thoigianlienlac = 'Đã thanh toán' 
+                AND ngaylap BETWEEN '$from' AND '$to'";
+        return $this->xuatdulieu($sql);
+    }
 }
+

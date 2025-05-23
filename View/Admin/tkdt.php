@@ -53,7 +53,13 @@ $idSua = 1;
 			
             include('../../model/quanlydoanhthu.php');
 			$obj = new hoadontt();
-            $hoadon = $obj->danhsachhoadontt();
+            if (isset($_POST['subngay'])) {
+    $from = $_POST['tungay'];
+    $to = $_POST['denngay'];
+    $hoadon = $obj->danhsachhoadontt_theongay($from, $to);
+} else {
+    $hoadon = $obj->danhsachhoadontt();
+}
 			$tong=0;
 			if ($hoadon) {
             echo '    <div class="row" style="margin-left: 10px;">
@@ -172,11 +178,7 @@ $idSua = 1;
 		<!-- Page wrapper end -->
 
 
-
-
-
-
-		<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/bootstrap.bundle.min.js"></script>
 		<script src="assets/js/modernizr.js"></script>
 		<script src="assets/js/moment.js"></script>
@@ -197,5 +199,62 @@ $idSua = 1;
 
 		<!-- Main Js Required -->
 		<script src="assets/js/main.js"></script>
+<?php
+
+
+// Biểu đồ doanh thu theo ngày
+$doanhthuByDate = [];
+for ($i = 0; $i < count($hoadon); $i++) {
+    $ngay = $hoadon[$i]["ngaylap"];
+    $tien = $hoadon[$i]["gia"] * $hoadon[$i]["soluong"];
+    if (!isset($doanhthuByDate[$ngay])) {
+        $doanhthuByDate[$ngay] = 0;
+    }
+    $doanhthuByDate[$ngay] += $tien;
+}
+$labels = json_encode(array_keys($doanhthuByDate));
+$values = json_encode(array_values($doanhthuByDate));
+?>
+
+<div style="display: flex; gap: 20px; justify-content: space-between; padding: 10px 20px;">
+  <!-- Biểu đồ cột -->
+  <div style="flex: 2; border: 1px solid #ccc; padding: 10px; border-radius: 8px;">
+    <div id="chart-bar" style="height: 300px;"></div>
+  </div>
+
+  <!-- Biểu đồ tròn -->
+  <div style="flex: 1; border: 1px solid #ccc; padding: 10px; border-radius: 8px;">
+    <div id="chart-pie" style="height: 300px;"></div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Bar chart
+    var optionsBar = {
+        chart: { type: 'bar', height: 300 },
+        series: [{ name: 'Doanh thu', data: <?= $values ?? '[]' ?> }],
+        xaxis: { categories: <?= $labels ?? '[]' ?> },
+        title: { text: 'Biểu đồ doanh thu theo ngày', align: 'center' }
+    };
+    new ApexCharts(document.querySelector("#chart-bar"), optionsBar).render();
+
+    // Pie chart
+    var optionsPie = {
+        chart: { type: 'pie', height: 300 },
+        series: <?= $values ?? '[]' ?>,
+        labels: <?= $labels ?? '[]' ?>,
+        title: { text: 'Tỷ trọng doanh thu', align: 'center' }
+    };
+    new ApexCharts(document.querySelector("#chart-pie"), optionsPie).render();
+});
+</script>
+
+
+
+
+
+
+		
 	</body>
 </html>
